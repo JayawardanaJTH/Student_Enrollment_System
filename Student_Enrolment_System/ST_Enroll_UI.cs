@@ -10,9 +10,9 @@ using System.Windows.Forms;
 
 namespace Student_Enrolment_System
 {
-    public partial class Form1 : Form
+    public partial class ST_Enroll_UI : Form
     {
-        public Form1()
+        public ST_Enroll_UI()
         {
             InitializeComponent();
         }
