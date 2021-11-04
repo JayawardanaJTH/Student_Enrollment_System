@@ -29,20 +29,20 @@
         private void InitializeComponent()
         {
             this.lbl_title = new System.Windows.Forms.Label();
-            this.lbl_regno = new System.Windows.Forms.Label();
+            this.lbl_regNumber = new System.Windows.Forms.Label();
             this.lbl_studentName = new System.Windows.Forms.Label();
-            this.label2 = new System.Windows.Forms.Label();
-            this.label3 = new System.Windows.Forms.Label();
-            this.label4 = new System.Windows.Forms.Label();
-            this.label5 = new System.Windows.Forms.Label();
+            this.lbl_dob = new System.Windows.Forms.Label();
+            this.lbl_gender = new System.Windows.Forms.Label();
+            this.lbl_contact = new System.Windows.Forms.Label();
+            this.lbl_courses = new System.Windows.Forms.Label();
             this.label6 = new System.Windows.Forms.Label();
-            this.textBox1 = new System.Windows.Forms.TextBox();
-            this.textBox2 = new System.Windows.Forms.TextBox();
-            this.dateTimePicker1 = new System.Windows.Forms.DateTimePicker();
-            this.radioButton1 = new System.Windows.Forms.RadioButton();
-            this.radioButton2 = new System.Windows.Forms.RadioButton();
-            this.textBox3 = new System.Windows.Forms.TextBox();
-            this.comboBox1 = new System.Windows.Forms.ComboBox();
+            this.txt_regNumber = new System.Windows.Forms.TextBox();
+            this.txt_studentName = new System.Windows.Forms.TextBox();
+            this.pik_date = new System.Windows.Forms.DateTimePicker();
+            this.rdbtn_male = new System.Windows.Forms.RadioButton();
+            this.rdbtn_female = new System.Windows.Forms.RadioButton();
+            this.txt_contact = new System.Windows.Forms.TextBox();
+            this.cmb_courses = new System.Windows.Forms.ComboBox();
             this.label1 = new System.Windows.Forms.Label();
             this.btn_insert = new System.Windows.Forms.Button();
             this.btn_delete = new System.Windows.Forms.Button();
@@ -60,15 +60,15 @@
             this.lbl_title.TabIndex = 1;
             this.lbl_title.Text = "Student Enrollment System";
             // 
-            // lbl_regno
+            // lbl_regNumber
             // 
-            this.lbl_regno.AutoSize = true;
-            this.lbl_regno.Font = new System.Drawing.Font("Microsoft Sans Serif", 15F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lbl_regno.Location = new System.Drawing.Point(54, 83);
-            this.lbl_regno.Name = "lbl_regno";
-            this.lbl_regno.Size = new System.Drawing.Size(188, 25);
-            this.lbl_regno.TabIndex = 2;
-            this.lbl_regno.Text = "Registration Number";
+            this.lbl_regNumber.AutoSize = true;
+            this.lbl_regNumber.Font = new System.Drawing.Font("Microsoft Sans Serif", 15F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lbl_regNumber.Location = new System.Drawing.Point(54, 83);
+            this.lbl_regNumber.Name = "lbl_regNumber";
+            this.lbl_regNumber.Size = new System.Drawing.Size(188, 25);
+            this.lbl_regNumber.TabIndex = 2;
+            this.lbl_regNumber.Text = "Registration Number";
             // 
             // lbl_studentName
             // 
@@ -80,45 +80,45 @@
             this.lbl_studentName.TabIndex = 3;
             this.lbl_studentName.Text = "Student Name";
             // 
-            // label2
+            // lbl_dob
             // 
-            this.label2.AutoSize = true;
-            this.label2.Font = new System.Drawing.Font("Microsoft Sans Serif", 15F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label2.Location = new System.Drawing.Point(54, 161);
-            this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(118, 25);
-            this.label2.TabIndex = 4;
-            this.label2.Text = "Date of Birth";
+            this.lbl_dob.AutoSize = true;
+            this.lbl_dob.Font = new System.Drawing.Font("Microsoft Sans Serif", 15F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lbl_dob.Location = new System.Drawing.Point(54, 161);
+            this.lbl_dob.Name = "lbl_dob";
+            this.lbl_dob.Size = new System.Drawing.Size(118, 25);
+            this.lbl_dob.TabIndex = 4;
+            this.lbl_dob.Text = "Date of Birth";
             // 
-            // label3
+            // lbl_gender
             // 
-            this.label3.AutoSize = true;
-            this.label3.Font = new System.Drawing.Font("Microsoft Sans Serif", 15F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label3.Location = new System.Drawing.Point(54, 200);
-            this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(77, 25);
-            this.label3.TabIndex = 5;
-            this.label3.Text = "Gender";
+            this.lbl_gender.AutoSize = true;
+            this.lbl_gender.Font = new System.Drawing.Font("Microsoft Sans Serif", 15F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lbl_gender.Location = new System.Drawing.Point(54, 200);
+            this.lbl_gender.Name = "lbl_gender";
+            this.lbl_gender.Size = new System.Drawing.Size(77, 25);
+            this.lbl_gender.TabIndex = 5;
+            this.lbl_gender.Text = "Gender";
             // 
-            // label4
+            // lbl_contact
             // 
-            this.label4.AutoSize = true;
-            this.label4.Font = new System.Drawing.Font("Microsoft Sans Serif", 15F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label4.Location = new System.Drawing.Point(54, 236);
-            this.label4.Name = "label4";
-            this.label4.Size = new System.Drawing.Size(154, 25);
-            this.label4.TabIndex = 6;
-            this.label4.Text = "Contact Number";
+            this.lbl_contact.AutoSize = true;
+            this.lbl_contact.Font = new System.Drawing.Font("Microsoft Sans Serif", 15F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lbl_contact.Location = new System.Drawing.Point(54, 236);
+            this.lbl_contact.Name = "lbl_contact";
+            this.lbl_contact.Size = new System.Drawing.Size(154, 25);
+            this.lbl_contact.TabIndex = 6;
+            this.lbl_contact.Text = "Contact Number";
             // 
-            // label5
+            // lbl_courses
             // 
-            this.label5.AutoSize = true;
-            this.label5.Font = new System.Drawing.Font("Microsoft Sans Serif", 15F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label5.Location = new System.Drawing.Point(54, 271);
-            this.label5.Name = "label5";
-            this.label5.Size = new System.Drawing.Size(172, 25);
-            this.label5.TabIndex = 7;
-            this.label5.Text = "Course Enrolled in";
+            this.lbl_courses.AutoSize = true;
+            this.lbl_courses.Font = new System.Drawing.Font("Microsoft Sans Serif", 15F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lbl_courses.Location = new System.Drawing.Point(54, 271);
+            this.lbl_courses.Name = "lbl_courses";
+            this.lbl_courses.Size = new System.Drawing.Size(172, 25);
+            this.lbl_courses.TabIndex = 7;
+            this.lbl_courses.Text = "Course Enrolled in";
             // 
             // label6
             // 
@@ -130,66 +130,68 @@
             this.label6.TabIndex = 8;
             this.label6.Text = "Age";
             // 
-            // textBox1
+            // txt_regNumber
             // 
-            this.textBox1.Location = new System.Drawing.Point(281, 83);
-            this.textBox1.Multiline = true;
-            this.textBox1.Name = "textBox1";
-            this.textBox1.Size = new System.Drawing.Size(210, 21);
-            this.textBox1.TabIndex = 9;
+            this.txt_regNumber.Location = new System.Drawing.Point(281, 83);
+            this.txt_regNumber.Multiline = true;
+            this.txt_regNumber.Name = "txt_regNumber";
+            this.txt_regNumber.Size = new System.Drawing.Size(210, 21);
+            this.txt_regNumber.TabIndex = 9;
             // 
-            // textBox2
+            // txt_studentName
             // 
-            this.textBox2.Location = new System.Drawing.Point(281, 120);
-            this.textBox2.Multiline = true;
-            this.textBox2.Name = "textBox2";
-            this.textBox2.Size = new System.Drawing.Size(210, 21);
-            this.textBox2.TabIndex = 10;
+            this.txt_studentName.Location = new System.Drawing.Point(281, 120);
+            this.txt_studentName.Multiline = true;
+            this.txt_studentName.Name = "txt_studentName";
+            this.txt_studentName.Size = new System.Drawing.Size(210, 21);
+            this.txt_studentName.TabIndex = 10;
             // 
-            // dateTimePicker1
+            // pik_date
             // 
-            this.dateTimePicker1.Location = new System.Drawing.Point(281, 157);
-            this.dateTimePicker1.Name = "dateTimePicker1";
-            this.dateTimePicker1.Size = new System.Drawing.Size(210, 20);
-            this.dateTimePicker1.TabIndex = 11;
+            this.pik_date.Location = new System.Drawing.Point(281, 157);
+            this.pik_date.Name = "pik_date";
+            this.pik_date.Size = new System.Drawing.Size(210, 20);
+            this.pik_date.TabIndex = 11;
             // 
-            // radioButton1
+            // rdbtn_male
             // 
-            this.radioButton1.AutoSize = true;
-            this.radioButton1.Location = new System.Drawing.Point(281, 200);
-            this.radioButton1.Name = "radioButton1";
-            this.radioButton1.Size = new System.Drawing.Size(85, 17);
-            this.radioButton1.TabIndex = 12;
-            this.radioButton1.TabStop = true;
-            this.radioButton1.Text = "radioButton1";
-            this.radioButton1.UseVisualStyleBackColor = true;
+            this.rdbtn_male.AutoSize = true;
+            this.rdbtn_male.Font = new System.Drawing.Font("Microsoft Sans Serif", 15F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.rdbtn_male.Location = new System.Drawing.Point(281, 200);
+            this.rdbtn_male.Name = "rdbtn_male";
+            this.rdbtn_male.Size = new System.Drawing.Size(73, 29);
+            this.rdbtn_male.TabIndex = 12;
+            this.rdbtn_male.TabStop = true;
+            this.rdbtn_male.Text = "Male";
+            this.rdbtn_male.UseVisualStyleBackColor = true;
             // 
-            // radioButton2
+            // rdbtn_female
             // 
-            this.radioButton2.AutoSize = true;
-            this.radioButton2.Location = new System.Drawing.Point(406, 200);
-            this.radioButton2.Name = "radioButton2";
-            this.radioButton2.Size = new System.Drawing.Size(85, 17);
-            this.radioButton2.TabIndex = 13;
-            this.radioButton2.TabStop = true;
-            this.radioButton2.Text = "radioButton2";
-            this.radioButton2.UseVisualStyleBackColor = true;
+            this.rdbtn_female.AutoSize = true;
+            this.rdbtn_female.Font = new System.Drawing.Font("Microsoft Sans Serif", 15F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.rdbtn_female.Location = new System.Drawing.Point(406, 200);
+            this.rdbtn_female.Name = "rdbtn_female";
+            this.rdbtn_female.Size = new System.Drawing.Size(95, 29);
+            this.rdbtn_female.TabIndex = 13;
+            this.rdbtn_female.TabStop = true;
+            this.rdbtn_female.Text = "Female";
+            this.rdbtn_female.UseVisualStyleBackColor = true;
             // 
-            // textBox3
+            // txt_contact
             // 
-            this.textBox3.Location = new System.Drawing.Point(281, 242);
-            this.textBox3.Multiline = true;
-            this.textBox3.Name = "textBox3";
-            this.textBox3.Size = new System.Drawing.Size(210, 21);
-            this.textBox3.TabIndex = 14;
+            this.txt_contact.Location = new System.Drawing.Point(281, 242);
+            this.txt_contact.Multiline = true;
+            this.txt_contact.Name = "txt_contact";
+            this.txt_contact.Size = new System.Drawing.Size(210, 21);
+            this.txt_contact.TabIndex = 14;
             // 
-            // comboBox1
+            // cmb_courses
             // 
-            this.comboBox1.FormattingEnabled = true;
-            this.comboBox1.Location = new System.Drawing.Point(281, 277);
-            this.comboBox1.Name = "comboBox1";
-            this.comboBox1.Size = new System.Drawing.Size(210, 21);
-            this.comboBox1.TabIndex = 15;
+            this.cmb_courses.FormattingEnabled = true;
+            this.cmb_courses.Location = new System.Drawing.Point(281, 277);
+            this.cmb_courses.Name = "cmb_courses";
+            this.cmb_courses.Size = new System.Drawing.Size(210, 21);
+            this.cmb_courses.TabIndex = 15;
             // 
             // label1
             // 
@@ -276,20 +278,20 @@
             this.Controls.Add(this.btn_delete);
             this.Controls.Add(this.btn_insert);
             this.Controls.Add(this.label1);
-            this.Controls.Add(this.comboBox1);
-            this.Controls.Add(this.textBox3);
-            this.Controls.Add(this.radioButton2);
-            this.Controls.Add(this.radioButton1);
-            this.Controls.Add(this.dateTimePicker1);
-            this.Controls.Add(this.textBox2);
-            this.Controls.Add(this.textBox1);
+            this.Controls.Add(this.cmb_courses);
+            this.Controls.Add(this.txt_contact);
+            this.Controls.Add(this.rdbtn_female);
+            this.Controls.Add(this.rdbtn_male);
+            this.Controls.Add(this.pik_date);
+            this.Controls.Add(this.txt_studentName);
+            this.Controls.Add(this.txt_regNumber);
             this.Controls.Add(this.label6);
-            this.Controls.Add(this.label5);
-            this.Controls.Add(this.label4);
-            this.Controls.Add(this.label3);
-            this.Controls.Add(this.label2);
+            this.Controls.Add(this.lbl_courses);
+            this.Controls.Add(this.lbl_contact);
+            this.Controls.Add(this.lbl_gender);
+            this.Controls.Add(this.lbl_dob);
             this.Controls.Add(this.lbl_studentName);
-            this.Controls.Add(this.lbl_regno);
+            this.Controls.Add(this.lbl_regNumber);
             this.Controls.Add(this.lbl_title);
             this.Name = "ST_Enroll_UI";
             this.Text = "Student Enroll";
@@ -301,20 +303,20 @@
         #endregion
 
         private System.Windows.Forms.Label lbl_title;
-        private System.Windows.Forms.Label lbl_regno;
+        private System.Windows.Forms.Label lbl_regNumber;
         private System.Windows.Forms.Label lbl_studentName;
-        private System.Windows.Forms.Label label2;
-        private System.Windows.Forms.Label label3;
-        private System.Windows.Forms.Label label4;
-        private System.Windows.Forms.Label label5;
+        private System.Windows.Forms.Label lbl_dob;
+        private System.Windows.Forms.Label lbl_gender;
+        private System.Windows.Forms.Label lbl_contact;
+        private System.Windows.Forms.Label lbl_courses;
         private System.Windows.Forms.Label label6;
-        private System.Windows.Forms.TextBox textBox1;
-        private System.Windows.Forms.TextBox textBox2;
-        private System.Windows.Forms.DateTimePicker dateTimePicker1;
-        private System.Windows.Forms.RadioButton radioButton1;
-        private System.Windows.Forms.RadioButton radioButton2;
-        private System.Windows.Forms.TextBox textBox3;
-        private System.Windows.Forms.ComboBox comboBox1;
+        private System.Windows.Forms.TextBox txt_regNumber;
+        private System.Windows.Forms.TextBox txt_studentName;
+        private System.Windows.Forms.DateTimePicker pik_date;
+        private System.Windows.Forms.RadioButton rdbtn_male;
+        private System.Windows.Forms.RadioButton rdbtn_female;
+        private System.Windows.Forms.TextBox txt_contact;
+        private System.Windows.Forms.ComboBox cmb_courses;
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.Button btn_insert;
         private System.Windows.Forms.Button btn_delete;
