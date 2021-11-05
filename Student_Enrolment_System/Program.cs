@@ -1,4 +1,5 @@
-﻿using System;
+﻿using Student_Enrolment_System.Forms;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
@@ -16,7 +17,7 @@ namespace Student_Enrolment_System
         {
             Application.EnableVisualStyles();
             Application.SetCompatibleTextRenderingDefault(false);
-            Application.Run(new ST_Enroll_UI());
+            Application.Run(new Home());
         }
     }
 }
