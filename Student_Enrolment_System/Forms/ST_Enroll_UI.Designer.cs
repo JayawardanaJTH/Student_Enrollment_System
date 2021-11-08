@@ -52,16 +52,20 @@
             // 
             // lbl_title
             // 
-            this.lbl_title.AutoSize = true;
+            this.lbl_title.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
             this.lbl_title.Font = new System.Drawing.Font("Microsoft Sans Serif", 18F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lbl_title.Location = new System.Drawing.Point(164, 9);
             this.lbl_title.Name = "lbl_title";
             this.lbl_title.Size = new System.Drawing.Size(327, 29);
             this.lbl_title.TabIndex = 1;
             this.lbl_title.Text = "Student Enrollment System";
+            this.lbl_title.TextAlign = System.Drawing.ContentAlignment.TopCenter;
             // 
             // lbl_regNumber
             // 
+            this.lbl_regNumber.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
             this.lbl_regNumber.AutoSize = true;
             this.lbl_regNumber.Font = new System.Drawing.Font("Microsoft Sans Serif", 15F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lbl_regNumber.Location = new System.Drawing.Point(54, 83);
@@ -72,6 +76,8 @@
             // 
             // lbl_studentName
             // 
+            this.lbl_studentName.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
             this.lbl_studentName.AutoSize = true;
             this.lbl_studentName.Font = new System.Drawing.Font("Microsoft Sans Serif", 15F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lbl_studentName.Location = new System.Drawing.Point(54, 122);
@@ -82,6 +88,8 @@
             // 
             // lbl_dob
             // 
+            this.lbl_dob.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
             this.lbl_dob.AutoSize = true;
             this.lbl_dob.Font = new System.Drawing.Font("Microsoft Sans Serif", 15F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lbl_dob.Location = new System.Drawing.Point(54, 161);
@@ -92,6 +100,8 @@
             // 
             // lbl_gender
             // 
+            this.lbl_gender.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
             this.lbl_gender.AutoSize = true;
             this.lbl_gender.Font = new System.Drawing.Font("Microsoft Sans Serif", 15F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lbl_gender.Location = new System.Drawing.Point(54, 200);
@@ -102,6 +112,8 @@
             // 
             // lbl_contact
             // 
+            this.lbl_contact.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
             this.lbl_contact.AutoSize = true;
             this.lbl_contact.Font = new System.Drawing.Font("Microsoft Sans Serif", 15F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lbl_contact.Location = new System.Drawing.Point(54, 236);
@@ -112,6 +124,8 @@
             // 
             // lbl_courses
             // 
+            this.lbl_courses.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
             this.lbl_courses.AutoSize = true;
             this.lbl_courses.Font = new System.Drawing.Font("Microsoft Sans Serif", 15F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lbl_courses.Location = new System.Drawing.Point(54, 271);
@@ -122,6 +136,7 @@
             // 
             // label6
             // 
+            this.label6.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
             this.label6.AutoSize = true;
             this.label6.Font = new System.Drawing.Font("Microsoft Sans Serif", 15F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label6.Location = new System.Drawing.Point(497, 152);
@@ -132,6 +147,8 @@
             // 
             // txt_regNumber
             // 
+            this.txt_regNumber.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
             this.txt_regNumber.Location = new System.Drawing.Point(281, 83);
             this.txt_regNumber.Multiline = true;
             this.txt_regNumber.Name = "txt_regNumber";
@@ -140,6 +157,8 @@
             // 
             // txt_studentName
             // 
+            this.txt_studentName.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
             this.txt_studentName.Location = new System.Drawing.Point(281, 120);
             this.txt_studentName.Multiline = true;
             this.txt_studentName.Name = "txt_studentName";
@@ -148,6 +167,8 @@
             // 
             // pik_date
             // 
+            this.pik_date.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
             this.pik_date.Location = new System.Drawing.Point(281, 157);
             this.pik_date.Name = "pik_date";
             this.pik_date.Size = new System.Drawing.Size(210, 20);
@@ -155,6 +176,8 @@
             // 
             // rdbtn_male
             // 
+            this.rdbtn_male.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
             this.rdbtn_male.AutoSize = true;
             this.rdbtn_male.Font = new System.Drawing.Font("Microsoft Sans Serif", 15F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.rdbtn_male.Location = new System.Drawing.Point(281, 200);
@@ -167,6 +190,8 @@
             // 
             // rdbtn_female
             // 
+            this.rdbtn_female.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
             this.rdbtn_female.AutoSize = true;
             this.rdbtn_female.Font = new System.Drawing.Font("Microsoft Sans Serif", 15F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.rdbtn_female.Location = new System.Drawing.Point(406, 200);
@@ -179,6 +204,8 @@
             // 
             // txt_contact
             // 
+            this.txt_contact.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
             this.txt_contact.Location = new System.Drawing.Point(281, 242);
             this.txt_contact.Multiline = true;
             this.txt_contact.Name = "txt_contact";
@@ -187,6 +214,8 @@
             // 
             // cmb_courses
             // 
+            this.cmb_courses.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
             this.cmb_courses.FormattingEnabled = true;
             this.cmb_courses.Location = new System.Drawing.Point(281, 277);
             this.cmb_courses.Name = "cmb_courses";
@@ -205,6 +234,7 @@
             // 
             // btn_insert
             // 
+            this.btn_insert.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Left | System.Windows.Forms.AnchorStyles.Right)));
             this.btn_insert.BackColor = System.Drawing.SystemColors.Highlight;
             this.btn_insert.Cursor = System.Windows.Forms.Cursors.Hand;
             this.btn_insert.FlatAppearance.BorderColor = System.Drawing.Color.Black;
@@ -221,6 +251,7 @@
             // 
             // btn_delete
             // 
+            this.btn_delete.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Left | System.Windows.Forms.AnchorStyles.Right)));
             this.btn_delete.BackColor = System.Drawing.SystemColors.Highlight;
             this.btn_delete.Cursor = System.Windows.Forms.Cursors.Hand;
             this.btn_delete.FlatAppearance.BorderColor = System.Drawing.Color.Black;
@@ -237,6 +268,7 @@
             // 
             // btn_clear
             // 
+            this.btn_clear.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Left | System.Windows.Forms.AnchorStyles.Right)));
             this.btn_clear.BackColor = System.Drawing.SystemColors.Highlight;
             this.btn_clear.Cursor = System.Windows.Forms.Cursors.Hand;
             this.btn_clear.FlatAppearance.BorderColor = System.Drawing.Color.Black;
@@ -253,6 +285,7 @@
             // 
             // btn_exit
             // 
+            this.btn_exit.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Left | System.Windows.Forms.AnchorStyles.Right)));
             this.btn_exit.BackColor = System.Drawing.Color.Red;
             this.btn_exit.Cursor = System.Windows.Forms.Cursors.Hand;
             this.btn_exit.FlatAppearance.BorderColor = System.Drawing.Color.Black;
@@ -293,7 +326,9 @@
             this.Controls.Add(this.lbl_studentName);
             this.Controls.Add(this.lbl_regNumber);
             this.Controls.Add(this.lbl_title);
+            this.MinimumSize = new System.Drawing.Size(671, 591);
             this.Name = "ST_Enroll_UI";
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Student Enroll";
             this.ResumeLayout(false);
             this.PerformLayout();

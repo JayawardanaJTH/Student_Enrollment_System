@@ -33,10 +33,10 @@ namespace Student_Enrolment_System.Forms
             //after 3 sec stop the timer
             tmr.Stop();
             //display mainform
-            ST_Enroll_UI mf = new ST_Enroll_UI();
-            mf.Show();
-            //hide this form
-            this.Hide();
+            ST_Enroll_UI mainUI = new ST_Enroll_UI();
+
+            Hide();
+            mainUI.Show();
         }
     }
 }
