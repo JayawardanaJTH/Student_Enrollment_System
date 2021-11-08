@@ -35,7 +35,7 @@
             this.lbl_gender = new System.Windows.Forms.Label();
             this.lbl_contact = new System.Windows.Forms.Label();
             this.lbl_courses = new System.Windows.Forms.Label();
-            this.label6 = new System.Windows.Forms.Label();
+            this.lbl_age = new System.Windows.Forms.Label();
             this.txt_regNumber = new System.Windows.Forms.TextBox();
             this.txt_studentName = new System.Windows.Forms.TextBox();
             this.pik_date = new System.Windows.Forms.DateTimePicker();
@@ -43,7 +43,7 @@
             this.rdbtn_female = new System.Windows.Forms.RadioButton();
             this.txt_contact = new System.Windows.Forms.TextBox();
             this.cmb_courses = new System.Windows.Forms.ComboBox();
-            this.label1 = new System.Windows.Forms.Label();
+            this.txt_age = new System.Windows.Forms.Label();
             this.btn_insert = new System.Windows.Forms.Button();
             this.btn_delete = new System.Windows.Forms.Button();
             this.btn_clear = new System.Windows.Forms.Button();
@@ -134,16 +134,16 @@
             this.lbl_courses.TabIndex = 7;
             this.lbl_courses.Text = "Course Enrolled in";
             // 
-            // label6
+            // lbl_age
             // 
-            this.label6.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            this.label6.AutoSize = true;
-            this.label6.Font = new System.Drawing.Font("Microsoft Sans Serif", 15F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label6.Location = new System.Drawing.Point(497, 152);
-            this.label6.Name = "label6";
-            this.label6.Size = new System.Drawing.Size(48, 25);
-            this.label6.TabIndex = 8;
-            this.label6.Text = "Age";
+            this.lbl_age.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+            this.lbl_age.AutoSize = true;
+            this.lbl_age.Font = new System.Drawing.Font("Microsoft Sans Serif", 15F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lbl_age.Location = new System.Drawing.Point(497, 152);
+            this.lbl_age.Name = "lbl_age";
+            this.lbl_age.Size = new System.Drawing.Size(48, 25);
+            this.lbl_age.TabIndex = 8;
+            this.lbl_age.Text = "Age";
             // 
             // txt_regNumber
             // 
@@ -222,15 +222,15 @@
             this.cmb_courses.Size = new System.Drawing.Size(210, 21);
             this.cmb_courses.TabIndex = 15;
             // 
-            // label1
+            // txt_age
             // 
-            this.label1.AutoSize = true;
-            this.label1.Font = new System.Drawing.Font("Microsoft Sans Serif", 15F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label1.Location = new System.Drawing.Point(551, 152);
-            this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(0, 25);
-            this.label1.TabIndex = 16;
-            this.label1.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            this.txt_age.AutoSize = true;
+            this.txt_age.Font = new System.Drawing.Font("Microsoft Sans Serif", 15F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txt_age.Location = new System.Drawing.Point(551, 152);
+            this.txt_age.Name = "txt_age";
+            this.txt_age.Size = new System.Drawing.Size(0, 25);
+            this.txt_age.TabIndex = 16;
+            this.txt_age.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
             // btn_insert
             // 
@@ -310,7 +310,7 @@
             this.Controls.Add(this.btn_clear);
             this.Controls.Add(this.btn_delete);
             this.Controls.Add(this.btn_insert);
-            this.Controls.Add(this.label1);
+            this.Controls.Add(this.txt_age);
             this.Controls.Add(this.cmb_courses);
             this.Controls.Add(this.txt_contact);
             this.Controls.Add(this.rdbtn_female);
@@ -318,7 +318,7 @@
             this.Controls.Add(this.pik_date);
             this.Controls.Add(this.txt_studentName);
             this.Controls.Add(this.txt_regNumber);
-            this.Controls.Add(this.label6);
+            this.Controls.Add(this.lbl_age);
             this.Controls.Add(this.lbl_courses);
             this.Controls.Add(this.lbl_contact);
             this.Controls.Add(this.lbl_gender);
@@ -344,7 +344,7 @@
         private System.Windows.Forms.Label lbl_gender;
         private System.Windows.Forms.Label lbl_contact;
         private System.Windows.Forms.Label lbl_courses;
-        private System.Windows.Forms.Label label6;
+        private System.Windows.Forms.Label lbl_age;
         private System.Windows.Forms.TextBox txt_regNumber;
         private System.Windows.Forms.TextBox txt_studentName;
         private System.Windows.Forms.DateTimePicker pik_date;
@@ -352,7 +352,7 @@
         private System.Windows.Forms.RadioButton rdbtn_female;
         private System.Windows.Forms.TextBox txt_contact;
         private System.Windows.Forms.ComboBox cmb_courses;
-        private System.Windows.Forms.Label label1;
+        private System.Windows.Forms.Label txt_age;
         private System.Windows.Forms.Button btn_insert;
         private System.Windows.Forms.Button btn_delete;
         private System.Windows.Forms.Button btn_clear;
