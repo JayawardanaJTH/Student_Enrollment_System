@@ -174,6 +174,7 @@
             this.pik_date.Name = "pik_date";
             this.pik_date.Size = new System.Drawing.Size(210, 20);
             this.pik_date.TabIndex = 11;
+            this.pik_date.CloseUp += new System.EventHandler(this.pik_date_CloseUp);
             // 
             // rdbtn_male
             // 
@@ -229,8 +230,9 @@
             this.txt_age.Font = new System.Drawing.Font("Microsoft Sans Serif", 15F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.txt_age.Location = new System.Drawing.Point(551, 152);
             this.txt_age.Name = "txt_age";
-            this.txt_age.Size = new System.Drawing.Size(0, 25);
+            this.txt_age.Size = new System.Drawing.Size(23, 25);
             this.txt_age.TabIndex = 16;
+            this.txt_age.Text = "0";
             this.txt_age.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
             // btn_insert
