@@ -16,5 +16,27 @@ namespace Student_Enrolment_System.Forms
         {
             InitializeComponent();
         }
+
+        Timer tmr;
+        private void Home_Shown(object sender, EventArgs e)
+        {
+            tmr = new Timer();
+            //set time interval 3 sec
+            tmr.Interval = 3000;
+            //starts the timer
+            tmr.Start();
+            tmr.Tick += tmr_Tick;
+        }
+
+        void tmr_Tick(object sender, EventArgs e)
+        {
+            //after 3 sec stop the timer
+            tmr.Stop();
+            //display mainform
+            ST_Enroll_UI mf = new ST_Enroll_UI();
+            mf.Show();
+            //hide this form
+            this.Hide();
+        }
     }
 }
