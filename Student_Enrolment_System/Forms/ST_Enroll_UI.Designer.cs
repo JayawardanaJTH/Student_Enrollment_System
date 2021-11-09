@@ -235,7 +235,6 @@
             this.cmb_courses.Name = "cmb_courses";
             this.cmb_courses.Size = new System.Drawing.Size(210, 21);
             this.cmb_courses.TabIndex = 15;
-            this.cmb_courses.SelectedIndex = 0;
             // 
             // txt_age
             // 
@@ -300,6 +299,7 @@
             this.btn_delete.Size = new System.Drawing.Size(160, 64);
             this.btn_delete.TabIndex = 22;
             this.btn_delete.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            this.btn_delete.Click += new System.EventHandler(this.btn_delete_Click);
             // 
             // btn_clear
             // 
@@ -326,6 +326,7 @@
             this.btn_clear.Size = new System.Drawing.Size(160, 64);
             this.btn_clear.TabIndex = 23;
             this.btn_clear.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            this.btn_clear.Click += new System.EventHandler(this.btn_clear_Click);
             // 
             // btn_exit
             // 
@@ -352,6 +353,7 @@
             this.btn_exit.Size = new System.Drawing.Size(160, 64);
             this.btn_exit.TabIndex = 24;
             this.btn_exit.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            this.btn_exit.Click += new System.EventHandler(this.btn_exit_Click);
             // 
             // ST_Enroll_UI
             // 

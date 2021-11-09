@@ -1,5 +1,6 @@
 ﻿using Student_Enrolment_System.Controllers;
 using System;
+using System.Threading;
 using System.Windows.Forms;
 
 namespace Student_Enrolment_System
@@ -11,7 +12,7 @@ namespace Student_Enrolment_System
         public ST_Enroll_UI()
         {
             InitializeComponent();
-
+            cmb_courses.SelectedIndex = 0;
         }
 
         //performed when choose a date
@@ -33,11 +34,32 @@ namespace Student_Enrolment_System
             }
             else
             {
-                MessageBox.Show("Student Inserted Successfully", "Data Inserted", MessageBoxButtons.OK, MessageBoxIcon.Information);
-
-                formatForm();
-                
+                MessageBox.Show("Student Inserted Successfully", "Data Inserted", MessageBoxButtons.OK, MessageBoxIcon.Information); 
             }
+        }
+
+        /**
+            <summary>Allow only numerical values</summary>
+        */
+        private void txt_contact_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            string contact = txt_contact.Text;
+
+            if (!Char.IsDigit(e.KeyChar) && !Char.IsControl(e.KeyChar))
+            {
+                e.Handled = true; 
+            }
+        }
+
+        private void btn_delete_Click(object sender, EventArgs e)
+        {
+            //if yes returns 6 and if no returns 7
+            int result = (Int32)MessageBox.Show("Confirm  Delete Yes/No", "Delete Student", MessageBoxButtons.YesNo, MessageBoxIcon.Warning);
+        }
+
+        private void btn_clear_Click(object sender, EventArgs e)
+        {
+            formatForm();
         }
 
         private void formatForm()
@@ -52,18 +74,9 @@ namespace Student_Enrolment_System
             cmb_courses.SelectedIndex = 0;
         }
 
-        /**
-            <summary>Allow only numerical values</summary>
-        */
-        private void txt_contact_KeyPress(object sender, KeyPressEventArgs e)
+        private void btn_exit_Click(object sender, EventArgs e)
         {
-            string contact = txt_contact.Text;
-
-            if (!Char.IsDigit(e.KeyChar) && !Char.IsControl(e.KeyChar))
-            {
-                e.Handled = true; 
-            }
-            
+            Close();
         }
     }
 }
