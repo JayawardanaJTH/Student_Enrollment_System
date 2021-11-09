@@ -1,12 +1,5 @@
 ﻿using Student_Enrolment_System.Controllers;
 using System;
-using System.Collections.Generic;
-using System.ComponentModel;
-using System.Data;
-using System.Drawing;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 using System.Windows.Forms;
 
 namespace Student_Enrolment_System
@@ -21,11 +14,56 @@ namespace Student_Enrolment_System
 
         }
 
+        //performed when choose a date
         private void pik_date_CloseUp(object sender, EventArgs e)
         {
             DateTime dob = DateTime.Parse(pik_date.Text);
             int age = formController.get_age(dob);
             txt_age.Text = age.ToString();
+        }
+
+        //preformed when press the insert button
+        private void btn_insert_Click(object sender, EventArgs e)
+        {
+            bool formStatus = formController.validate_form(this);
+
+            if (formStatus)
+            {
+                MessageBox.Show("Complete the Missing Data", "Data Missing", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            }
+            else
+            {
+                MessageBox.Show("Student Inserted Successfully", "Data Inserted", MessageBoxButtons.OK, MessageBoxIcon.Information);
+
+                formatForm();
+                
+            }
+        }
+
+        private void formatForm()
+        {
+            txt_studentName.Clear();
+            txt_regNumber.Clear();
+            rdbtn_female.Checked = false;
+            rdbtn_male.Checked = false;
+            pik_date.Text = DateTime.Now.ToString();
+            txt_age.Text = "0";
+            txt_contact.Clear();
+            cmb_courses.SelectedIndex = 0;
+        }
+
+        /**
+            <summary>Allow only numerical values</summary>
+        */
+        private void txt_contact_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            string contact = txt_contact.Text;
+
+            if (!Char.IsDigit(e.KeyChar) && !Char.IsControl(e.KeyChar))
+            {
+                e.Handled = true; 
+            }
+            
         }
     }
 }

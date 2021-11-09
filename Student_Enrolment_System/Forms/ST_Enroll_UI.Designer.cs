@@ -209,11 +209,13 @@
             // 
             this.txt_contact.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
+            this.txt_contact.DataBindings.Add(new System.Windows.Forms.Binding("MaxLength", global::Student_Enrolment_System.Properties.Settings.Default, "contact", true, System.Windows.Forms.DataSourceUpdateMode.OnPropertyChanged));
             this.txt_contact.Location = new System.Drawing.Point(281, 242);
-            this.txt_contact.Multiline = true;
+            this.txt_contact.MaxLength = global::Student_Enrolment_System.Properties.Settings.Default.contact;
             this.txt_contact.Name = "txt_contact";
-            this.txt_contact.Size = new System.Drawing.Size(210, 21);
+            this.txt_contact.Size = new System.Drawing.Size(210, 20);
             this.txt_contact.TabIndex = 14;
+            this.txt_contact.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txt_contact_KeyPress);
             // 
             // cmb_courses
             // 
@@ -223,6 +225,7 @@
             this.cmb_courses.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.cmb_courses.FormattingEnabled = true;
             this.cmb_courses.Items.AddRange(new object[] {
+            "Select Course",
             "HND - COM ",
             "HND – BM ",
             "Dip - IT ",
@@ -232,6 +235,7 @@
             this.cmb_courses.Name = "cmb_courses";
             this.cmb_courses.Size = new System.Drawing.Size(210, 21);
             this.cmb_courses.TabIndex = 15;
+            this.cmb_courses.SelectedIndex = 0;
             // 
             // txt_age
             // 
@@ -269,6 +273,7 @@
             this.btn_insert.Size = new System.Drawing.Size(160, 64);
             this.btn_insert.TabIndex = 21;
             this.btn_insert.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            this.btn_insert.Click += new System.EventHandler(this.btn_insert_Click);
             // 
             // btn_delete
             // 
@@ -393,18 +398,18 @@
         private System.Windows.Forms.Label lbl_contact;
         private System.Windows.Forms.Label lbl_courses;
         private System.Windows.Forms.Label lbl_age;
-        private System.Windows.Forms.TextBox txt_regNumber;
-        private System.Windows.Forms.TextBox txt_studentName;
-        private System.Windows.Forms.DateTimePicker pik_date;
-        private System.Windows.Forms.RadioButton rdbtn_male;
-        private System.Windows.Forms.RadioButton rdbtn_female;
-        private System.Windows.Forms.TextBox txt_contact;
-        private System.Windows.Forms.ComboBox cmb_courses;
         private System.Windows.Forms.Label txt_age;
         private Bunifu.Framework.UI.BunifuThinButton2 btn_insert;
         private Bunifu.Framework.UI.BunifuThinButton2 btn_delete;
         private Bunifu.Framework.UI.BunifuThinButton2 btn_clear;
         private Bunifu.Framework.UI.BunifuThinButton2 btn_exit;
+        internal System.Windows.Forms.TextBox txt_regNumber;
+        internal System.Windows.Forms.TextBox txt_studentName;
+        internal System.Windows.Forms.RadioButton rdbtn_male;
+        internal System.Windows.Forms.RadioButton rdbtn_female;
+        internal System.Windows.Forms.TextBox txt_contact;
+        internal System.Windows.Forms.ComboBox cmb_courses;
+        internal System.Windows.Forms.DateTimePicker pik_date;
     }
 }
 

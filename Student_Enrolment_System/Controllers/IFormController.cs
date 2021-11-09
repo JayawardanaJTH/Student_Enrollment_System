@@ -13,5 +13,11 @@ namespace Student_Enrolment_System.Controllers
             .</summary>
         */
         int get_age(DateTime dob);
+
+        /**
+            <summary>This is for validate the form
+            (<paramref name="ST_Enroll_UI_object"/>)</summary>
+        */
+        bool validate_form(object obj);
     }
 }
