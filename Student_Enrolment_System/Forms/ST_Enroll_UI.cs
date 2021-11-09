@@ -1,4 +1,5 @@
 ﻿using Student_Enrolment_System.Controllers;
+using Student_Enrolment_System.Utility;
 using System;
 using System.Threading;
 using System.Windows.Forms;
@@ -19,23 +20,24 @@ namespace Student_Enrolment_System
         private void pik_date_CloseUp(object sender, EventArgs e)
         {
             DateTime dob = DateTime.Parse(pik_date.Text);
-            int age = formController.get_age(dob);
-            txt_age.Text = age.ToString();
+            //int age = formController.get_age(dob);
+            //txt_age.Text = age.ToString();
         }
 
         //preformed when press the insert button
         private void btn_insert_Click(object sender, EventArgs e)
         {
-            bool formStatus = formController.validate_form(this);
+            //bool formStatus = formController.validate_form(this);
 
-            if (formStatus)
-            {
-                MessageBox.Show("Complete the Missing Data", "Data Missing", MessageBoxButtons.OK, MessageBoxIcon.Error);
-            }
-            else
-            {
+            //if (formStatus)
+            //{
+               // MessageBox.Show("Complete the Missing Data", "Data Missing", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            //}
+           // else
+            //{
+                DBconnection.getConnection();
                 MessageBox.Show("Student Inserted Successfully", "Data Inserted", MessageBoxButtons.OK, MessageBoxIcon.Information); 
-            }
+            //}
         }
 
         /**

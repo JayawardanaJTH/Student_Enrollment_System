@@ -160,7 +160,6 @@
       <DependentUpon>Settings.settings</DependentUpon>
       <DesignTimeSharedInput>True</DesignTimeSharedInput>
     </Compile>
-    <None Include="Utility\properties.config" />
   </ItemGroup>
   <ItemGroup>
     <None Include="App.config" />
