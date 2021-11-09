@@ -170,6 +170,7 @@
             // 
             this.pik_date.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
+            this.pik_date.Cursor = System.Windows.Forms.Cursors.Hand;
             this.pik_date.Location = new System.Drawing.Point(281, 157);
             this.pik_date.Name = "pik_date";
             this.pik_date.Size = new System.Drawing.Size(210, 20);
@@ -218,7 +219,15 @@
             // 
             this.cmb_courses.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
+            this.cmb_courses.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.cmb_courses.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.cmb_courses.FormattingEnabled = true;
+            this.cmb_courses.Items.AddRange(new object[] {
+            "HND - COM ",
+            "HND – BM ",
+            "Dip - IT ",
+            "Dip - English ",
+            "Dip - BM"});
             this.cmb_courses.Location = new System.Drawing.Point(281, 277);
             this.cmb_courses.Name = "cmb_courses";
             this.cmb_courses.Size = new System.Drawing.Size(210, 21);
