@@ -1,4 +1,5 @@
-﻿using System;
+﻿using Student_Enrolment_System.Models;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -19,5 +20,9 @@ namespace Student_Enrolment_System.Controllers
             (<paramref name="ST_Enroll_UI_object"/>)</summary>
         */
         bool validate_form(object obj);
+
+        //Database handling methods
+
+        bool insert_student(Student student);
     }
 }

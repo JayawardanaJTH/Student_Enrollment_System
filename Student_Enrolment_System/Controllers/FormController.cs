@@ -4,6 +4,9 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using Student_Enrolment_System.Models;
+using MySql.Data.MySqlClient;
+using Student_Enrolment_System.Utility;
 
 namespace Student_Enrolment_System.Controllers
 {
@@ -28,6 +31,33 @@ namespace Student_Enrolment_System.Controllers
 
                 return 0;
             }
+        }
+
+        public bool insert_student(Student student)
+        {
+            try
+            {
+                MySqlConnection connection = DBconnection.getConnection();
+
+                string query = "INSERT INTO student (Registration_Number, Student_Name, Date_of_Birth, Gender, Contact_Number, Course_enrolled_in) VALUES (@regno,@name,@dob,@gender,@contact,@course)";
+                MySqlCommand cmd = new MySqlCommand(query, connection);
+
+                cmd.Parameters.AddWithValue("@regno", student.regno);
+                cmd.Parameters.AddWithValue("@name", student.name);
+                cmd.Parameters.AddWithValue("@dob", student.dob);
+                cmd.Parameters.AddWithValue("@gender", student.gender);
+                cmd.Parameters.AddWithValue("@contact", student.contact);
+                cmd.Parameters.AddWithValue("@course", student.course);
+                cmd.Prepare();
+
+                cmd.ExecuteNonQuery();
+
+            }catch(Exception e)
+            {
+                return false;
+            }
+
+            return true;
         }
 
         public bool validate_form(object obj)

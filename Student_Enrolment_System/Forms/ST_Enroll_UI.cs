@@ -1,4 +1,6 @@
-﻿using Student_Enrolment_System.Controllers;
+﻿using MySql.Data.MySqlClient;
+using Student_Enrolment_System.Controllers;
+using Student_Enrolment_System.Models;
 using Student_Enrolment_System.Utility;
 using System;
 using System.Threading;
@@ -9,6 +11,12 @@ namespace Student_Enrolment_System
     public partial class ST_Enroll_UI : Form
     {
         private IFormController formController = new FormController();
+
+        enum Gender
+        {
+            Male = 'M',
+            Female = 'F'
+        }
 
         public ST_Enroll_UI()
         {
@@ -31,12 +39,42 @@ namespace Student_Enrolment_System
 
             //if (formStatus)
             //{
-               // MessageBox.Show("Complete the Missing Data", "Data Missing", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            // MessageBox.Show("Complete the Missing Data", "Data Missing", MessageBoxButtons.OK, MessageBoxIcon.Error);
             //}
-           // else
+            // else
             //{
-                DBconnection.getConnection();
-                MessageBox.Show("Student Inserted Successfully", "Data Inserted", MessageBoxButtons.OK, MessageBoxIcon.Information); 
+            try
+            {
+                char gender;
+                IFormController form = new FormController();
+
+                if (rdbtn_female.Checked)
+                {
+                    gender = (char)Gender.Female;
+                }
+                else
+                {
+                    gender = (char)Gender.Male;
+                }
+
+                Student student_ob = new Student(Int32.Parse(txt_regNumber.Text.ToString()), txt_studentName.Text.ToString()
+                    , DateTime.Parse(pik_date.Text.ToString()), gender, Int32.Parse(txt_contact.Text.ToString()),cmb_courses.SelectedItem.ToString());
+
+                bool result = form.insert_student(student_ob);
+
+                if (result)
+                {
+                    MessageBox.Show("Student Inserted Successfully", "Data Inserted", MessageBoxButtons.OK, MessageBoxIcon.Information); 
+                }
+                else
+                {
+                    throw new Exception();
+                }
+            }
+            catch(Exception ex)
+            {
+                MessageBox.Show("Data insertion error", "Erro", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            }
             //}
         }
 
