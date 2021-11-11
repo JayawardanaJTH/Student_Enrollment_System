@@ -138,7 +138,7 @@
       <SubType>Component</SubType>
     </Compile>
     <Compile Include="Utility\Constants.cs" />
-    <Compile Include="Utility\DBconnection.cs" />
+    <Compile Include="Utility\DbConnection.cs" />
     <EmbeddedResource Include="Forms\Home.resx">
       <DependentUpon>Home.cs</DependentUpon>
     </EmbeddedResource>

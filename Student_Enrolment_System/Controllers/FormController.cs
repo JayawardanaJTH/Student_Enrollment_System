@@ -12,17 +12,17 @@ namespace Student_Enrolment_System.Controllers
 {
     class FormController : IFormController
     {
-        public int get_age(DateTime dob)
+        public int GetAge(DateTime Birthday)
         {
             try
             {
-                int age = DateTime.Now.AddYears(-dob.Year).Year;
+                int Age = DateTime.Now.AddYears(-Birthday.Year).Year;
 
-                if (age < 18)
+                if (Age < 18)
                 {
                     throw new Exception("Cannot Enroll – Below 18 years");
                 }
-                return age;
+                return Age;
 
             }
             catch (Exception e)
@@ -33,64 +33,64 @@ namespace Student_Enrolment_System.Controllers
             }
         }
 
-        public bool validate_form(object obj)
+        public bool ValidatForm(object Object)
         {
-            ST_Enroll_UI form = (ST_Enroll_UI)obj;
-            bool status = false;
+            ST_Enroll_UI Form = (ST_Enroll_UI)Object;
+            bool Status = false;
 
-            if (form.txt_regNumber.Text.Equals(""))
+            if (Form.txt_regNumber.Text.Equals(""))
             {
-                status = true;
+                Status = true;
             }
-            else if (form.txt_studentName.Text.Equals(""))
+            else if (Form.txt_studentName.Text.Equals(""))
             {
-                status = true;
+                Status = true;
             }
-            else if (get_age(DateTime.Parse(form.pik_date.Text)) < 18)
+            else if (GetAge(DateTime.Parse(Form.pik_date.Text)) < 18)
             {
-                status = true;
+                Status = true;
             }
-            else if (!form.rdbtn_male.Checked && !form.rdbtn_female.Checked)
+            else if (!Form.rdbtn_male.Checked && !Form.rdbtn_female.Checked)
             {
-                status = true;
+                Status = true;
             }
-            else if (form.txt_contact.Text.Equals("") || form.txt_contact.Text.Length != 10)
+            else if (Form.txt_contact.Text.Equals("") || Form.txt_contact.Text.Length != 10)
             {
-                status = true;
+                Status = true;
             }
-            else if (form.cmb_courses.SelectedIndex == 0)
+            else if (Form.cmb_courses.SelectedIndex == 0)
             {
-                status = true;
+                Status = true;
             }
             else
             {
-                status = false;
+                Status = false;
             }
 
-            return status;
+            return Status;
         }
 
         //Database functions
 
-        public bool insert_student(Student student)
+        public bool InsertStudent(Student student)
         {
             try
             {
-                MySqlConnection connection = DBconnection.getConnection();
+                MySqlConnection Connection = DbConnection.getConnection();
 
-                string query = Constants.insert_student;
-                MySqlCommand cmd = new MySqlCommand(query, connection);
+                string Query = Constants.InsertStudent;
+                MySqlCommand Command = new MySqlCommand(Query, Connection);
 
-                cmd.Parameters.AddWithValue("@regno", student.regno);
-                cmd.Parameters.AddWithValue("@name", student.name);
-                cmd.Parameters.AddWithValue("@dob", student.dob);
-                cmd.Parameters.AddWithValue("@gender", student.gender);
-                cmd.Parameters.AddWithValue("@contact", student.contact);
-                cmd.Parameters.AddWithValue("@course", student.course);
-                cmd.Prepare();
+                Command.Parameters.AddWithValue("@regno", student.Regno);
+                Command.Parameters.AddWithValue("@name", student.Name);
+                Command.Parameters.AddWithValue("@dob", student.Birthday);
+                Command.Parameters.AddWithValue("@gender", student.Gender);
+                Command.Parameters.AddWithValue("@contact", student.Contact);
+                Command.Parameters.AddWithValue("@course", student.Course);
+                Command.Prepare();
 
-                cmd.ExecuteNonQuery();
-                DBconnection.closeConnection();
+                Command.ExecuteNonQuery();
+                DbConnection.closeConnection();
             }
             catch (Exception e)
             {
@@ -100,69 +100,69 @@ namespace Student_Enrolment_System.Controllers
             return true;
         }
 
-        public Student find_student_by_regno(int regno)
+        public Student FindStudentByRegno(int regno)
         {
-            Student student = new Student();
+            Student Student = new Student();
 
             try
             {
-                MySqlConnection connection = DBconnection.getConnection();
+                MySqlConnection Connection = DbConnection.getConnection();
 
-                string query = Constants.get_student_by_regno;
-                MySqlCommand cmd = new MySqlCommand(query, connection);
+                string Query = Constants.GetStudentByRegno;
+                MySqlCommand Command = new MySqlCommand(Query, Connection);
 
-                cmd.Parameters.AddWithValue("@regno", regno);
-                cmd.Prepare();
+                Command.Parameters.AddWithValue("@regno", regno);
+                Command.Prepare();
 
-                MySqlDataReader reader = cmd.ExecuteReader();
+                MySqlDataReader Reader = Command.ExecuteReader();
 
-                if (reader.HasRows)
+                if (Reader.HasRows)
                 {
-                    while (reader.Read())
+                    while (Reader.Read())
                     {
-                        student.regno = reader.GetInt32(0);
-                        student.name = reader.GetString(1);
-                        student.dob = reader.GetDateTime(2);
-                        student.gender = reader.GetChar(3);
-                        student.contact = reader.GetInt32(4);
-                        student.course = reader.GetString(5);
-                        student.status = true;
+                        Student.Regno = Reader.GetInt32(0);
+                        Student.Name = Reader.GetString(1);
+                        Student.Birthday = Reader.GetDateTime(2);
+                        Student.Gender = Reader.GetChar(3);
+                        Student.Contact = Reader.GetInt32(4);
+                        Student.Course = Reader.GetString(5);
+                        Student.Status = true;
                     }
 
-                    reader.Close();
-                    DBconnection.closeConnection();
+                    Reader.Close();
+                    DbConnection.closeConnection();
 
-                    return student;
+                    return Student;
                 }
                 else
                 {
-                    reader.Close();
-                    DBconnection.closeConnection();
-                    return student;
+                    Reader.Close();
+                    DbConnection.closeConnection();
+                    return Student;
                 }
             }
             catch (Exception e)
             {
-                DBconnection.closeConnection();
-                student.status = false;
-                return student;
+                DbConnection.closeConnection();
+                Student.Status = false;
+                return Student;
             }
         }
 
-        public bool delete_student_by_regno(int regno)
+        public bool DeleteStudentByRegno(int regno)
         {
             try
             {
-                MySqlConnection connection = DBconnection.getConnection();
+                MySqlConnection Connection = DbConnection.getConnection();
 
-                string query = Constants.delete_student_by_regno;
-                MySqlCommand cmd = new MySqlCommand(query, connection);
+                string Query = Constants.DeleteStudentByRegno;
+                MySqlCommand Command = new MySqlCommand(Query, Connection);
 
-                cmd.Parameters.AddWithValue("regno", regno);
-                cmd.Prepare();
+                Command.Parameters.AddWithValue("regno", regno);
+                Command.Prepare();
 
-                cmd.ExecuteNonQuery();
-                DBconnection.closeConnection();
+                Command.ExecuteNonQuery();
+                DbConnection.closeConnection();
 
                 return true;
 

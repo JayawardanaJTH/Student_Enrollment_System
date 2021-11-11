@@ -8,8 +8,8 @@ namespace Student_Enrolment_System.Utility
 {
     class Constants
     {
-        public const string insert_student = "INSERT INTO student (Registration_Number, Student_Name, Date_of_Birth, Gender, Contact_Number, Course_enrolled_in) VALUES (@regno,@name,@dob,@gender,@contact,@course)";
-        public const string get_student_by_regno = "SELECT * FROM student WHERE Registration_Number = @regno";
-        public const string delete_student_by_regno = "DELETE FROM student WHERE Registration_Number = @regno";
+        public const string InsertStudent = "INSERT INTO student (Registration_Number, Student_Name, Date_of_Birth, Gender, Contact_Number, Course_enrolled_in) VALUES (@regno,@name,@dob,@gender,@contact,@course)";
+        public const string GetStudentByRegno = "SELECT * FROM student WHERE Registration_Number = @regno";
+        public const string DeleteStudentByRegno = "DELETE FROM student WHERE Registration_Number = @regno";
     }
 }

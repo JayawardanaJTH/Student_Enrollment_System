@@ -8,69 +8,69 @@ namespace Student_Enrolment_System.Models
 {
     class Student
     {
-        private int _regno;
-        private string _name;
-        private DateTime _dob;
-        private char _gender;
-        private int _contact;
-        private string _course;
-        private bool _status;
+        private int _Regno;
+        private string _Name;
+        private DateTime _Birthday;
+        private char _Gender;
+        private int _Contact;
+        private string _Course;
+        private bool _IsAvailable;
 
         public Student()
         {
-            _status = false;
+            _IsAvailable = false;
         }
 
-        public Student(int regno, string name, DateTime dob, char gender, int contact, string course)
+        public Student(int Regno, string Name, DateTime Birthday, char Gender, int Contact, string Course)
         {
-            this._regno = regno;
-            this._name = name;
-            this._dob = dob;
-            this._gender = gender;
-            this._contact = contact;
-            this._course = course;
+            this._Regno = Regno;
+            this._Name = Name;
+            this._Birthday = Birthday;
+            this._Gender = Gender;
+            this._Contact = Contact;
+            this._Course = Course;
         }
 
-        public int regno
+        public int Regno
         {
-            get { return _regno; }
-            set { _regno = value; }
+            get { return _Regno; }
+            set { _Regno = value; }
         }
 
-        public string name
+        public string Name
         {
-            get { return _name; }
-            set { _name = value; }
+            get { return _Name; }
+            set { _Name = value; }
         }
 
-        public DateTime dob
+        public DateTime Birthday
         {
-            get { return _dob; }
-            set { _dob = value; }
+            get { return _Birthday; }
+            set { _Birthday = value; }
         }
 
-        public char gender
+        public char Gender
         {
-            get { return _gender; }
-            set { _gender = value; }
+            get { return _Gender; }
+            set { _Gender = value; }
         }
 
-        public int contact
+        public int Contact
         {
-            get { return _contact; }
-            set { _contact = value; }
+            get { return _Contact; }
+            set { _Contact = value; }
         }
 
-        public string course
+        public string Course
         {
-            get { return _course; }
-            set { _course = value; }
+            get { return _Course; }
+            set { _Course = value; }
         }
 
-        public bool status
+        public bool Status
         {
-            get { return _status; }
-            set { _status = value; }
+            get { return _IsAvailable; }
+            set { _IsAvailable = value; }
         }
     }
 }

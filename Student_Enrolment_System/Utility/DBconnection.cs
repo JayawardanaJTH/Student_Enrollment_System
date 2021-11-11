@@ -10,12 +10,12 @@ using System.Windows.Forms;
 
 namespace Student_Enrolment_System.Utility
 {
-    class DBconnection
+    class DbConnection
     {
         private static MySqlConnection connection = new MySqlConnection();
 
         //avoid create objects from this class
-        private DBconnection()
+        private DbConnection()
         {
 
         }
