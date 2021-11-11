@@ -15,7 +15,7 @@ namespace Student_Enrolment_System.Models
         private int _contact;
         private string _course;
 
-            public Student(int regno, string name, DateTime dob, char gender, int contact, string course)
+        public Student(int regno, string name, DateTime dob, char gender, int contact, string course)
         {
             this._regno = regno;
             this._name = name;

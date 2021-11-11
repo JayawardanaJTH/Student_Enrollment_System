@@ -29,8 +29,8 @@ namespace Student_Enrolment_System
         private void pik_date_CloseUp(object sender, EventArgs e)
         {
             DateTime dob = DateTime.Parse(pik_date.Text);
-            //int age = _formController.get_age(dob);
-            //txt_age.Text = age.ToString();
+            int age = _formController.get_age(dob);
+            txt_age.Text = age.ToString();
         }
 
         /**
@@ -40,7 +40,7 @@ namespace Student_Enrolment_System
         {
             if (!Char.IsDigit(e.KeyChar) && !Char.IsControl(e.KeyChar))
             {
-                e.Handled = true; 
+                e.Handled = true;
             }
         }
 
@@ -67,68 +67,8 @@ namespace Student_Enrolment_System
             cmb_courses.SelectedIndex = 0;
             btn_insert.Enabled = true;
             btn_delete.Enabled = true;
-        }
-
-//----Button functions implementation----
-
-        private void btn_insert_Click(object sender, EventArgs e)
-        {
-            //bool formStatus = formController.validate_form(this);
-
-            //if (formStatus)
-            //{
-            // MessageBox.Show("Complete the Missing Data", "Data Missing", MessageBoxButtons.OK, MessageBoxIcon.Error);
-            //}
-            // else
-            //{
-            try
-            {
-                char gender;
-
-                if (rdbtn_female.Checked)
-                {
-                    gender = (char)Gender.Female;
-                }
-                else
-                {
-                    gender = (char)Gender.Male;
-                }
-
-                Student student_ob = new Student(Int32.Parse(txt_regNumber.Text), txt_studentName.Text
-                    , DateTime.Parse(pik_date.Text), gender, Int32.Parse(txt_contact.Text), cmb_courses.SelectedItem.ToString());
-
-                bool result = _formController.insert_student(student_ob);
-
-                if (result)
-                {
-                    MessageBox.Show("Student Inserted Successfully", "Data Inserted", MessageBoxButtons.OK, MessageBoxIcon.Information);
-                }
-                else
-                {
-                    throw new Exception();
-                }
-            }
-            catch (Exception ex)
-            {
-                MessageBox.Show("Data insertion error", "Erro", MessageBoxButtons.OK, MessageBoxIcon.Error);
-            }
-            //}
-        }
-
-        private void btn_delete_Click(object sender, EventArgs e)
-        {
-            //if yes returns 6 and if no returns 7
-            int result = (Int32)MessageBox.Show("Confirm  Delete Yes/No", "Delete Student", MessageBoxButtons.YesNo, MessageBoxIcon.Warning);
-        }
-
-        private void btn_clear_Click(object sender, EventArgs e)
-        {
-            formatForm();
-        } 
-
-        private void btn_exit_Click(object sender, EventArgs e)
-        {
-            Close();
+            btn_insert.ButtonColor = System.Drawing.SystemColors.Highlight;
+            btn_delete.ButtonColor = System.Drawing.SystemColors.Highlight;
         }
 
         private void txt_regNumber_Leave(object sender, EventArgs e)
@@ -138,15 +78,89 @@ namespace Student_Enrolment_System
                 bool result = _formController.find_student_by_regno(int.Parse(txt_regNumber.Text));
                 if (result)
                 {
-                    this.btn_insert.ButtonColor = System.Drawing.SystemColors.ControlDark;
                     btn_insert.Enabled = false;
+                    btn_insert.ButtonColor = System.Drawing.SystemColors.ControlDark;
+
+                    btn_delete.Enabled = true;
+                    btn_delete.ButtonColor = System.Drawing.SystemColors.Highlight;
                 }
                 else
                 {
-                    this.btn_insert.ButtonColor = System.Drawing.SystemColors.Highlight;
                     btn_insert.Enabled = true;
+                    btn_insert.ButtonColor = System.Drawing.SystemColors.Highlight;
+
+                    btn_delete.Enabled = false;
+                    btn_delete.ButtonColor = System.Drawing.SystemColors.ControlDark;
                 }
             }
+        }
+
+        //----Button functions implementation----
+
+        private void btn_insert_Click(object sender, EventArgs e)
+        {
+            bool formStatus = _formController.validate_form(this);
+
+            if (formStatus)
+            {
+                MessageBox.Show("Complete the Missing Data", "Data Missing", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            }
+            else
+            {
+                try
+                {
+                    char gender;
+
+                    if (rdbtn_female.Checked)
+                    {
+                        gender = (char)Gender.Female;
+                    }
+                    else
+                    {
+                        gender = (char)Gender.Male;
+                    }
+
+                    Student student_ob = new Student(Int32.Parse(txt_regNumber.Text), txt_studentName.Text
+                        , DateTime.Parse(pik_date.Text), gender, Int32.Parse(txt_contact.Text), cmb_courses.SelectedItem.ToString());
+
+                    bool result = _formController.insert_student(student_ob);
+
+                    if (result)
+                    {
+                        MessageBox.Show("Student Inserted Successfully", "Data Inserted", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                    }
+                    else
+                    {
+                        throw new Exception();
+                    }
+                }
+                catch (Exception ex)
+                {
+                    MessageBox.Show("Data insertion error", "Erro", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                }
+            }
+        }
+
+        private void btn_delete_Click(object sender, EventArgs e)
+        {
+            //if yes returns 6 and if no returns 7
+            int result = (Int32)MessageBox.Show("Confirm  Delete Yes/No", "Delete Student", MessageBoxButtons.YesNo, MessageBoxIcon.Warning);
+
+            if (result == 6)
+            {
+                _formController.delete_student_by_regno(Int32.Parse(txt_regNumber.Text));
+                MessageBox.Show("Student Deleted Successfully", "Data Deleted", MessageBoxButtons.OK, MessageBoxIcon.Information);
+            }
+        }
+
+        private void btn_clear_Click(object sender, EventArgs e)
+        {
+            formatForm();
+        }
+
+        private void btn_exit_Click(object sender, EventArgs e)
+        {
+            Close();
         }
     }
 }

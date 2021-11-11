@@ -21,7 +21,7 @@ namespace Student_Enrolment_System.Controllers
         */
         bool validate_form(object obj);
 
-//----Database handling methods----
+        //----Database handling methods----
 
         /**
             <summary>This is for insert student details to database.
@@ -34,5 +34,11 @@ namespace Student_Enrolment_System.Controllers
             (<paramref name="registration_number"/>)</summary>
         */
         bool find_student_by_regno(int regno);
+
+        /**
+            <summary>This is for delte student.
+            (<paramref name="registration_number"/>)</summary>
+        */
+        bool delete_student_by_regno(int regno);
     }
 }

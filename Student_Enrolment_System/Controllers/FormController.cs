@@ -35,18 +35,18 @@ namespace Student_Enrolment_System.Controllers
 
         public bool validate_form(object obj)
         {
-            ST_Enroll_UI form = (ST_Enroll_UI) obj;
+            ST_Enroll_UI form = (ST_Enroll_UI)obj;
             bool status = false;
 
             if (form.txt_regNumber.Text.Equals(""))
             {
                 status = true;
             }
-           else if(form.txt_studentName.Text.Equals(""))
+            else if (form.txt_studentName.Text.Equals(""))
             {
                 status = true;
             }
-            else if(get_age(DateTime.Parse(form.pik_date.Text)) < 18)
+            else if (get_age(DateTime.Parse(form.pik_date.Text)) < 18)
             {
                 status = true;
             }
@@ -54,11 +54,11 @@ namespace Student_Enrolment_System.Controllers
             {
                 status = true;
             }
-            else if(form.txt_contact.Text.Equals("") || form.txt_contact.Text.Length != 10)
+            else if (form.txt_contact.Text.Equals("") || form.txt_contact.Text.Length != 10)
             {
                 status = true;
             }
-            else if(form.cmb_courses.SelectedIndex == 0)
+            else if (form.cmb_courses.SelectedIndex == 0)
             {
                 status = true;
             }
@@ -123,11 +123,34 @@ namespace Student_Enrolment_System.Controllers
                 {
                     return false;
                 }
-            }catch(Exception e)
+            }
+            catch (Exception e)
             {
                 return false;
             }
         }
 
+        public bool delete_student_by_regno(int regno)
+        {
+            try
+            {
+                MySqlConnection connection = DBconnection.getConnection();
+
+                string query = "DELETE FROM student WHERE Registration_Number = @regno";
+                MySqlCommand cmd = new MySqlCommand(query, connection);
+
+                cmd.Parameters.AddWithValue("regno", regno);
+                cmd.Prepare();
+
+                cmd.ExecuteNonQuery();
+
+                return true;
+
+            }
+            catch (Exception e)
+            {
+                return false;
+            }
+        }
     }
 }

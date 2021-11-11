@@ -253,6 +253,7 @@
             this.btn_insert.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.btn_insert.BorderColor = System.Drawing.Color.Black;
             this.btn_insert.ButtonColor = System.Drawing.SystemColors.Highlight;
+            this.btn_insert.Cursor = System.Windows.Forms.Cursors.Hand;
             this.btn_insert.FlatAppearance.BorderSize = 0;
             this.btn_insert.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btn_insert.Font = new System.Drawing.Font("Century Gothic", 15F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
@@ -273,6 +274,7 @@
             this.btn_delete.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.btn_delete.BorderColor = System.Drawing.Color.Black;
             this.btn_delete.ButtonColor = System.Drawing.SystemColors.Highlight;
+            this.btn_delete.Cursor = System.Windows.Forms.Cursors.Hand;
             this.btn_delete.FlatAppearance.BorderSize = 0;
             this.btn_delete.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btn_delete.Font = new System.Drawing.Font("Century Gothic", 15F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
@@ -293,6 +295,7 @@
             this.btn_clear.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.btn_clear.BorderColor = System.Drawing.Color.Black;
             this.btn_clear.ButtonColor = System.Drawing.SystemColors.Highlight;
+            this.btn_clear.Cursor = System.Windows.Forms.Cursors.Hand;
             this.btn_clear.FlatAppearance.BorderSize = 0;
             this.btn_clear.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btn_clear.Font = new System.Drawing.Font("Century Gothic", 15F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
@@ -313,6 +316,7 @@
             this.btn_exit.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.btn_exit.BorderColor = System.Drawing.Color.Black;
             this.btn_exit.ButtonColor = System.Drawing.Color.Red;
+            this.btn_exit.Cursor = System.Windows.Forms.Cursors.Hand;
             this.btn_exit.FlatAppearance.BorderSize = 0;
             this.btn_exit.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btn_exit.Font = new System.Drawing.Font("Century Gothic", 15F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
