@@ -18,8 +18,8 @@ namespace Student_Enrolment_System
         {
             Application.EnableVisualStyles();
             Application.SetCompatibleTextRenderingDefault(false);
-           // Application.Run(new Home());
-            Application.Run(new ST_Enroll_UI());
+            Application.Run(new Home());
+            //Application.Run(new ST_Enroll_UI());
         }
     }
 }
