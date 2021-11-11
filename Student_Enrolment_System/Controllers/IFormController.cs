@@ -21,8 +21,18 @@ namespace Student_Enrolment_System.Controllers
         */
         bool validate_form(object obj);
 
-        //Database handling methods
+//----Database handling methods----
 
+        /**
+            <summary>This is for insert student details to database.
+            (<paramref name="student"/>)</summary>
+        */
         bool insert_student(Student student);
+
+        /**
+            <summary>This is for find student is exist or not in the database.
+            (<paramref name="registration_number"/>)</summary>
+        */
+        bool find_student_by_regno(int regno);
     }
 }

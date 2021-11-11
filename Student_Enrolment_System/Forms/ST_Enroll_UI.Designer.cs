@@ -28,7 +28,6 @@
         /// </summary>
         private void InitializeComponent()
         {
-            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(ST_Enroll_UI));
             this.lbl_title = new System.Windows.Forms.Label();
             this.lbl_regNumber = new System.Windows.Forms.Label();
             this.lbl_studentName = new System.Windows.Forms.Label();
@@ -45,10 +44,10 @@
             this.txt_contact = new System.Windows.Forms.TextBox();
             this.cmb_courses = new System.Windows.Forms.ComboBox();
             this.txt_age = new System.Windows.Forms.Label();
-            this.btn_insert = new Bunifu.Framework.UI.BunifuThinButton2();
-            this.btn_delete = new Bunifu.Framework.UI.BunifuThinButton2();
-            this.btn_clear = new Bunifu.Framework.UI.BunifuThinButton2();
-            this.btn_exit = new Bunifu.Framework.UI.BunifuThinButton2();
+            this.btn_insert = new ePOSOne.btnProduct.Button_WOC();
+            this.btn_delete = new ePOSOne.btnProduct.Button_WOC();
+            this.btn_clear = new ePOSOne.btnProduct.Button_WOC();
+            this.btn_exit = new ePOSOne.btnProduct.Button_WOC();
             this.SuspendLayout();
             // 
             // lbl_title
@@ -155,6 +154,8 @@
             this.txt_regNumber.Name = "txt_regNumber";
             this.txt_regNumber.Size = new System.Drawing.Size(210, 21);
             this.txt_regNumber.TabIndex = 9;
+            this.txt_regNumber.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txt_regNumber_KeyPress);
+            this.txt_regNumber.Leave += new System.EventHandler(this.txt_regNumber_Leave);
             // 
             // txt_studentName
             // 
@@ -249,110 +250,82 @@
             // 
             // btn_insert
             // 
-            this.btn_insert.ActiveBorderThickness = 3;
-            this.btn_insert.ActiveCornerRadius = 20;
-            this.btn_insert.ActiveFillColor = System.Drawing.SystemColors.HotTrack;
-            this.btn_insert.ActiveForecolor = System.Drawing.Color.Black;
-            this.btn_insert.ActiveLineColor = System.Drawing.Color.Black;
             this.btn_insert.Anchor = System.Windows.Forms.AnchorStyles.None;
-            this.btn_insert.BackColor = System.Drawing.SystemColors.ActiveBorder;
-            this.btn_insert.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("btn_insert.BackgroundImage")));
-            this.btn_insert.ButtonText = "INSERT";
-            this.btn_insert.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.btn_insert.BorderColor = System.Drawing.Color.Black;
+            this.btn_insert.ButtonColor = System.Drawing.SystemColors.Highlight;
+            this.btn_insert.FlatAppearance.BorderSize = 0;
+            this.btn_insert.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btn_insert.Font = new System.Drawing.Font("Century Gothic", 15F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btn_insert.ForeColor = System.Drawing.Color.Black;
-            this.btn_insert.IdleBorderThickness = 3;
-            this.btn_insert.IdleCornerRadius = 20;
-            this.btn_insert.IdleFillColor = System.Drawing.SystemColors.Highlight;
-            this.btn_insert.IdleForecolor = System.Drawing.Color.Black;
-            this.btn_insert.IdleLineColor = System.Drawing.Color.Black;
-            this.btn_insert.Location = new System.Drawing.Point(247, 313);
-            this.btn_insert.Margin = new System.Windows.Forms.Padding(6, 5, 6, 5);
+            this.btn_insert.Location = new System.Drawing.Point(247, 337);
             this.btn_insert.Name = "btn_insert";
-            this.btn_insert.Size = new System.Drawing.Size(160, 64);
-            this.btn_insert.TabIndex = 21;
-            this.btn_insert.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            this.btn_insert.OnHoverBorderColor = System.Drawing.Color.Black;
+            this.btn_insert.OnHoverButtonColor = System.Drawing.SystemColors.HotTrack;
+            this.btn_insert.OnHoverTextColor = System.Drawing.Color.Black;
+            this.btn_insert.Size = new System.Drawing.Size(160, 42);
+            this.btn_insert.TabIndex = 25;
+            this.btn_insert.Text = "INSERT";
+            this.btn_insert.TextColor = System.Drawing.Color.Black;
+            this.btn_insert.UseVisualStyleBackColor = true;
             this.btn_insert.Click += new System.EventHandler(this.btn_insert_Click);
             // 
             // btn_delete
             // 
-            this.btn_delete.ActiveBorderThickness = 3;
-            this.btn_delete.ActiveCornerRadius = 20;
-            this.btn_delete.ActiveFillColor = System.Drawing.SystemColors.HotTrack;
-            this.btn_delete.ActiveForecolor = System.Drawing.Color.Black;
-            this.btn_delete.ActiveLineColor = System.Drawing.Color.Black;
             this.btn_delete.Anchor = System.Windows.Forms.AnchorStyles.None;
-            this.btn_delete.BackColor = System.Drawing.SystemColors.ActiveBorder;
-            this.btn_delete.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("btn_delete.BackgroundImage")));
-            this.btn_delete.ButtonText = "DELETE";
-            this.btn_delete.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.btn_delete.BorderColor = System.Drawing.Color.Black;
+            this.btn_delete.ButtonColor = System.Drawing.SystemColors.Highlight;
+            this.btn_delete.FlatAppearance.BorderSize = 0;
+            this.btn_delete.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btn_delete.Font = new System.Drawing.Font("Century Gothic", 15F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btn_delete.ForeColor = System.Drawing.Color.Black;
-            this.btn_delete.IdleBorderThickness = 3;
-            this.btn_delete.IdleCornerRadius = 20;
-            this.btn_delete.IdleFillColor = System.Drawing.SystemColors.Highlight;
-            this.btn_delete.IdleForecolor = System.Drawing.Color.Black;
-            this.btn_delete.IdleLineColor = System.Drawing.Color.Black;
-            this.btn_delete.Location = new System.Drawing.Point(247, 387);
-            this.btn_delete.Margin = new System.Windows.Forms.Padding(6, 5, 6, 5);
+            this.btn_delete.Location = new System.Drawing.Point(247, 402);
             this.btn_delete.Name = "btn_delete";
-            this.btn_delete.Size = new System.Drawing.Size(160, 64);
-            this.btn_delete.TabIndex = 22;
-            this.btn_delete.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            this.btn_delete.OnHoverBorderColor = System.Drawing.Color.Black;
+            this.btn_delete.OnHoverButtonColor = System.Drawing.SystemColors.HotTrack;
+            this.btn_delete.OnHoverTextColor = System.Drawing.Color.Black;
+            this.btn_delete.Size = new System.Drawing.Size(160, 42);
+            this.btn_delete.TabIndex = 26;
+            this.btn_delete.Text = "DELETE";
+            this.btn_delete.TextColor = System.Drawing.Color.Black;
+            this.btn_delete.UseVisualStyleBackColor = true;
             this.btn_delete.Click += new System.EventHandler(this.btn_delete_Click);
             // 
             // btn_clear
             // 
-            this.btn_clear.ActiveBorderThickness = 3;
-            this.btn_clear.ActiveCornerRadius = 20;
-            this.btn_clear.ActiveFillColor = System.Drawing.SystemColors.HotTrack;
-            this.btn_clear.ActiveForecolor = System.Drawing.Color.Black;
-            this.btn_clear.ActiveLineColor = System.Drawing.Color.Black;
             this.btn_clear.Anchor = System.Windows.Forms.AnchorStyles.None;
-            this.btn_clear.BackColor = System.Drawing.SystemColors.ActiveBorder;
-            this.btn_clear.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("btn_clear.BackgroundImage")));
-            this.btn_clear.ButtonText = "CLEAR";
-            this.btn_clear.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.btn_clear.BorderColor = System.Drawing.Color.Black;
+            this.btn_clear.ButtonColor = System.Drawing.SystemColors.Highlight;
+            this.btn_clear.FlatAppearance.BorderSize = 0;
+            this.btn_clear.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btn_clear.Font = new System.Drawing.Font("Century Gothic", 15F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btn_clear.ForeColor = System.Drawing.Color.Black;
-            this.btn_clear.IdleBorderThickness = 3;
-            this.btn_clear.IdleCornerRadius = 20;
-            this.btn_clear.IdleFillColor = System.Drawing.SystemColors.Highlight;
-            this.btn_clear.IdleForecolor = System.Drawing.Color.Black;
-            this.btn_clear.IdleLineColor = System.Drawing.Color.Black;
-            this.btn_clear.Location = new System.Drawing.Point(247, 461);
-            this.btn_clear.Margin = new System.Windows.Forms.Padding(6, 5, 6, 5);
+            this.btn_clear.Location = new System.Drawing.Point(247, 465);
             this.btn_clear.Name = "btn_clear";
-            this.btn_clear.Size = new System.Drawing.Size(160, 64);
-            this.btn_clear.TabIndex = 23;
-            this.btn_clear.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            this.btn_clear.OnHoverBorderColor = System.Drawing.Color.Black;
+            this.btn_clear.OnHoverButtonColor = System.Drawing.SystemColors.HotTrack;
+            this.btn_clear.OnHoverTextColor = System.Drawing.Color.Black;
+            this.btn_clear.Size = new System.Drawing.Size(160, 42);
+            this.btn_clear.TabIndex = 27;
+            this.btn_clear.Text = "CLEAR";
+            this.btn_clear.TextColor = System.Drawing.Color.Black;
+            this.btn_clear.UseVisualStyleBackColor = true;
             this.btn_clear.Click += new System.EventHandler(this.btn_clear_Click);
             // 
             // btn_exit
             // 
-            this.btn_exit.ActiveBorderThickness = 3;
-            this.btn_exit.ActiveCornerRadius = 20;
-            this.btn_exit.ActiveFillColor = System.Drawing.Color.Red;
-            this.btn_exit.ActiveForecolor = System.Drawing.Color.Black;
-            this.btn_exit.ActiveLineColor = System.Drawing.Color.Black;
             this.btn_exit.Anchor = System.Windows.Forms.AnchorStyles.None;
-            this.btn_exit.BackColor = System.Drawing.SystemColors.ActiveBorder;
-            this.btn_exit.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("btn_exit.BackgroundImage")));
-            this.btn_exit.ButtonText = "EXIT";
-            this.btn_exit.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.btn_exit.BorderColor = System.Drawing.Color.Black;
+            this.btn_exit.ButtonColor = System.Drawing.Color.Red;
+            this.btn_exit.FlatAppearance.BorderSize = 0;
+            this.btn_exit.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btn_exit.Font = new System.Drawing.Font("Century Gothic", 15F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btn_exit.ForeColor = System.Drawing.Color.Black;
-            this.btn_exit.IdleBorderThickness = 3;
-            this.btn_exit.IdleCornerRadius = 20;
-            this.btn_exit.IdleFillColor = System.Drawing.Color.Red;
-            this.btn_exit.IdleForecolor = System.Drawing.Color.Black;
-            this.btn_exit.IdleLineColor = System.Drawing.Color.Black;
-            this.btn_exit.Location = new System.Drawing.Point(480, 474);
-            this.btn_exit.Margin = new System.Windows.Forms.Padding(6, 5, 6, 5);
+            this.btn_exit.Location = new System.Drawing.Point(464, 465);
             this.btn_exit.Name = "btn_exit";
-            this.btn_exit.Size = new System.Drawing.Size(160, 64);
-            this.btn_exit.TabIndex = 24;
-            this.btn_exit.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            this.btn_exit.OnHoverBorderColor = System.Drawing.Color.Black;
+            this.btn_exit.OnHoverButtonColor = System.Drawing.Color.OrangeRed;
+            this.btn_exit.OnHoverTextColor = System.Drawing.Color.Black;
+            this.btn_exit.Size = new System.Drawing.Size(160, 42);
+            this.btn_exit.TabIndex = 28;
+            this.btn_exit.Text = "EXIT";
+            this.btn_exit.TextColor = System.Drawing.Color.Black;
+            this.btn_exit.UseVisualStyleBackColor = true;
             this.btn_exit.Click += new System.EventHandler(this.btn_exit_Click);
             // 
             // ST_Enroll_UI
@@ -401,10 +374,6 @@
         private System.Windows.Forms.Label lbl_courses;
         private System.Windows.Forms.Label lbl_age;
         private System.Windows.Forms.Label txt_age;
-        private Bunifu.Framework.UI.BunifuThinButton2 btn_insert;
-        private Bunifu.Framework.UI.BunifuThinButton2 btn_delete;
-        private Bunifu.Framework.UI.BunifuThinButton2 btn_clear;
-        private Bunifu.Framework.UI.BunifuThinButton2 btn_exit;
         internal System.Windows.Forms.TextBox txt_regNumber;
         internal System.Windows.Forms.TextBox txt_studentName;
         internal System.Windows.Forms.RadioButton rdbtn_male;
@@ -412,6 +381,10 @@
         internal System.Windows.Forms.TextBox txt_contact;
         internal System.Windows.Forms.ComboBox cmb_courses;
         internal System.Windows.Forms.DateTimePicker pik_date;
+        private ePOSOne.btnProduct.Button_WOC btn_insert;
+        private ePOSOne.btnProduct.Button_WOC btn_delete;
+        private ePOSOne.btnProduct.Button_WOC btn_clear;
+        private ePOSOne.btnProduct.Button_WOC btn_exit;
     }
 }
 

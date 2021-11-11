@@ -10,8 +10,9 @@ namespace Student_Enrolment_System
 {
     public partial class ST_Enroll_UI : Form
     {
-        private IFormController formController = new FormController();
+        private IFormController _formController = new FormController();
 
+        //enum for gender
         enum Gender
         {
             Male = 'M',
@@ -28,11 +29,48 @@ namespace Student_Enrolment_System
         private void pik_date_CloseUp(object sender, EventArgs e)
         {
             DateTime dob = DateTime.Parse(pik_date.Text);
-            //int age = formController.get_age(dob);
+            //int age = _formController.get_age(dob);
             //txt_age.Text = age.ToString();
         }
 
-        //preformed when press the insert button
+        /**
+            <summary>Allow only numerical values for contact</summary>
+        */
+        private void txt_contact_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            if (!Char.IsDigit(e.KeyChar) && !Char.IsControl(e.KeyChar))
+            {
+                e.Handled = true; 
+            }
+        }
+
+        /**
+            <summary>Allow only numerical values for registration number</summary>
+        */
+        private void txt_regNumber_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            if (!Char.IsDigit(e.KeyChar) && !Char.IsControl(e.KeyChar))
+            {
+                e.Handled = true;
+            }
+        }
+
+        private void formatForm()
+        {
+            txt_studentName.Clear();
+            txt_regNumber.Clear();
+            rdbtn_female.Checked = false;
+            rdbtn_male.Checked = false;
+            pik_date.Text = DateTime.Now.ToString();
+            txt_age.Text = "0";
+            txt_contact.Clear();
+            cmb_courses.SelectedIndex = 0;
+            btn_insert.Enabled = true;
+            btn_delete.Enabled = true;
+        }
+
+//----Button functions implementation----
+
         private void btn_insert_Click(object sender, EventArgs e)
         {
             //bool formStatus = formController.validate_form(this);
@@ -46,7 +84,6 @@ namespace Student_Enrolment_System
             try
             {
                 char gender;
-                IFormController form = new FormController();
 
                 if (rdbtn_female.Checked)
                 {
@@ -57,38 +94,25 @@ namespace Student_Enrolment_System
                     gender = (char)Gender.Male;
                 }
 
-                Student student_ob = new Student(Int32.Parse(txt_regNumber.Text.ToString()), txt_studentName.Text.ToString()
-                    , DateTime.Parse(pik_date.Text.ToString()), gender, Int32.Parse(txt_contact.Text.ToString()),cmb_courses.SelectedItem.ToString());
+                Student student_ob = new Student(Int32.Parse(txt_regNumber.Text), txt_studentName.Text
+                    , DateTime.Parse(pik_date.Text), gender, Int32.Parse(txt_contact.Text), cmb_courses.SelectedItem.ToString());
 
-                bool result = form.insert_student(student_ob);
+                bool result = _formController.insert_student(student_ob);
 
                 if (result)
                 {
-                    MessageBox.Show("Student Inserted Successfully", "Data Inserted", MessageBoxButtons.OK, MessageBoxIcon.Information); 
+                    MessageBox.Show("Student Inserted Successfully", "Data Inserted", MessageBoxButtons.OK, MessageBoxIcon.Information);
                 }
                 else
                 {
                     throw new Exception();
                 }
             }
-            catch(Exception ex)
+            catch (Exception ex)
             {
                 MessageBox.Show("Data insertion error", "Erro", MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
             //}
-        }
-
-        /**
-            <summary>Allow only numerical values</summary>
-        */
-        private void txt_contact_KeyPress(object sender, KeyPressEventArgs e)
-        {
-            string contact = txt_contact.Text;
-
-            if (!Char.IsDigit(e.KeyChar) && !Char.IsControl(e.KeyChar))
-            {
-                e.Handled = true; 
-            }
         }
 
         private void btn_delete_Click(object sender, EventArgs e)
@@ -100,23 +124,29 @@ namespace Student_Enrolment_System
         private void btn_clear_Click(object sender, EventArgs e)
         {
             formatForm();
-        }
-
-        private void formatForm()
-        {
-            txt_studentName.Clear();
-            txt_regNumber.Clear();
-            rdbtn_female.Checked = false;
-            rdbtn_male.Checked = false;
-            pik_date.Text = DateTime.Now.ToString();
-            txt_age.Text = "0";
-            txt_contact.Clear();
-            cmb_courses.SelectedIndex = 0;
-        }
+        } 
 
         private void btn_exit_Click(object sender, EventArgs e)
         {
             Close();
+        }
+
+        private void txt_regNumber_Leave(object sender, EventArgs e)
+        {
+            if (!txt_regNumber.Text.Equals(""))
+            {
+                bool result = _formController.find_student_by_regno(int.Parse(txt_regNumber.Text));
+                if (result)
+                {
+                    this.btn_insert.ButtonColor = System.Drawing.SystemColors.ControlDark;
+                    btn_insert.Enabled = false;
+                }
+                else
+                {
+                    this.btn_insert.ButtonColor = System.Drawing.SystemColors.Highlight;
+                    btn_insert.Enabled = true;
+                }
+            }
         }
     }
 }
