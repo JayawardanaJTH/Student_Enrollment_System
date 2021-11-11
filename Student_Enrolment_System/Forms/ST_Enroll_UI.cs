@@ -53,6 +53,9 @@ namespace Student_Enrolment_System
             {
                 e.Handled = true;
             }
+
+            btn_exit.Enabled = false;
+            btn_exit.ButtonColor = System.Drawing.SystemColors.ControlDark;
         }
 
         private void formatForm()
@@ -67,8 +70,10 @@ namespace Student_Enrolment_System
             cmb_courses.SelectedIndex = 0;
             btn_insert.Enabled = true;
             btn_delete.Enabled = true;
+            btn_exit.Enabled = true;
             btn_insert.ButtonColor = System.Drawing.SystemColors.Highlight;
             btn_delete.ButtonColor = System.Drawing.SystemColors.Highlight;
+            btn_exit.ButtonColor = System.Drawing.Color.Red;
         }
 
         private void txt_regNumber_Leave(object sender, EventArgs e)
