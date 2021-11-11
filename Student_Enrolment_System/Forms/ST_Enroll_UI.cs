@@ -49,13 +49,23 @@ namespace Student_Enrolment_System
         */
         private void txt_regNumber_KeyPress(object sender, KeyPressEventArgs e)
         {
-            if (!Char.IsDigit(e.KeyChar) && !Char.IsControl(e.KeyChar))
+            if (!Char.IsDigit(e.KeyChar) && !Char.IsControl(e.KeyChar) && !(e.KeyChar == (char)Keys.Enter))
             {
                 e.Handled = true;
             }
 
+            //check is the pressed key is Enter
+            if (e.KeyChar == (char)Keys.Enter)
+            {
+                findStudent();
+            }
             btn_exit.Enabled = false;
             btn_exit.ButtonColor = System.Drawing.SystemColors.ControlDark;
+        }
+
+        private void txt_regNumber_Leave(object sender, EventArgs e)
+        {
+            findStudent();
         }
 
         private void formatForm()
@@ -76,13 +86,31 @@ namespace Student_Enrolment_System
             btn_exit.ButtonColor = System.Drawing.Color.Red;
         }
 
-        private void txt_regNumber_Leave(object sender, EventArgs e)
+        private void findStudent()
         {
             if (!txt_regNumber.Text.Equals(""))
             {
-                bool result = _formController.find_student_by_regno(int.Parse(txt_regNumber.Text));
-                if (result)
+                Student result = _formController.find_student_by_regno(int.Parse(txt_regNumber.Text));
+                if (result.status)
                 {
+                    txt_studentName.Text = result.name;
+                    pik_date.Value = result.dob;
+                    txt_contact.Text = result.contact.ToString();
+                    cmb_courses.SelectedItem = result.course;
+
+                    if (result.gender.Equals((Char)Gender.Male))
+                    {
+                        rdbtn_male.Checked = true;
+                        rdbtn_female.Checked = false;
+                    }
+                    else
+                    {
+                        rdbtn_female.Checked = true;
+                        rdbtn_male.Checked = false;
+                    }
+
+                    txt_age.Text = _formController.get_age(result.dob).ToString();
+
                     btn_insert.Enabled = false;
                     btn_insert.ButtonColor = System.Drawing.SystemColors.ControlDark;
 
@@ -91,6 +119,14 @@ namespace Student_Enrolment_System
                 }
                 else
                 {
+                    txt_studentName.Text = "";
+                    pik_date.Value = DateTime.Now;
+                    txt_contact.Text = "";
+                    cmb_courses.SelectedIndex = 0;
+                    rdbtn_female.Checked = false;
+                    rdbtn_male.Checked = false;
+                    txt_age.Text = "";
+
                     btn_insert.Enabled = true;
                     btn_insert.ButtonColor = System.Drawing.SystemColors.Highlight;
 

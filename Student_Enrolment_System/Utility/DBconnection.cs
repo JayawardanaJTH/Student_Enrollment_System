@@ -43,5 +43,17 @@ namespace Student_Enrolment_System.Utility
             }
             return connection;
         }
+
+        public static void closeConnection()
+        {
+            try
+            {
+                connection.Close();
+            }
+            catch (Exception e)
+            {
+                MessageBox.Show(e.Message.ToString(), "Database Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            }
+        }
     }
 }

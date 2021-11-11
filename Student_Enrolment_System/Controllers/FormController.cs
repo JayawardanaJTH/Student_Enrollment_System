@@ -78,7 +78,7 @@ namespace Student_Enrolment_System.Controllers
             {
                 MySqlConnection connection = DBconnection.getConnection();
 
-                string query = "INSERT INTO student (Registration_Number, Student_Name, Date_of_Birth, Gender, Contact_Number, Course_enrolled_in) VALUES (@regno,@name,@dob,@gender,@contact,@course)";
+                string query = Constants.insert_student;
                 MySqlCommand cmd = new MySqlCommand(query, connection);
 
                 cmd.Parameters.AddWithValue("@regno", student.regno);
@@ -90,7 +90,7 @@ namespace Student_Enrolment_System.Controllers
                 cmd.Prepare();
 
                 cmd.ExecuteNonQuery();
-
+                DBconnection.closeConnection();
             }
             catch (Exception e)
             {
@@ -100,33 +100,52 @@ namespace Student_Enrolment_System.Controllers
             return true;
         }
 
-        public bool find_student_by_regno(int regno)
+        public Student find_student_by_regno(int regno)
         {
+            Student student = new Student();
+
             try
             {
                 MySqlConnection connection = DBconnection.getConnection();
-                int count = -1;
 
-                string query = "SELECT COUNT(Registration_Number) FROM student WHERE Registration_Number = @regno";
+                string query = Constants.get_student_by_regno;
                 MySqlCommand cmd = new MySqlCommand(query, connection);
 
                 cmd.Parameters.AddWithValue("@regno", regno);
                 cmd.Prepare();
 
-                count = Int32.Parse(cmd.ExecuteScalar().ToString());
+                MySqlDataReader reader = cmd.ExecuteReader();
 
-                if (count == 1)
+                if (reader.HasRows)
                 {
-                    return true;
+                    while (reader.Read())
+                    {
+                        student.regno = reader.GetInt32(0);
+                        student.name = reader.GetString(1);
+                        student.dob = reader.GetDateTime(2);
+                        student.gender = reader.GetChar(3);
+                        student.contact = reader.GetInt32(4);
+                        student.course = reader.GetString(5);
+                        student.status = true;
+                    }
+
+                    reader.Close();
+                    DBconnection.closeConnection();
+
+                    return student;
                 }
                 else
                 {
-                    return false;
+                    reader.Close();
+                    DBconnection.closeConnection();
+                    return student;
                 }
             }
             catch (Exception e)
             {
-                return false;
+                DBconnection.closeConnection();
+                student.status = false;
+                return student;
             }
         }
 
@@ -136,13 +155,14 @@ namespace Student_Enrolment_System.Controllers
             {
                 MySqlConnection connection = DBconnection.getConnection();
 
-                string query = "DELETE FROM student WHERE Registration_Number = @regno";
+                string query = Constants.delete_student_by_regno;
                 MySqlCommand cmd = new MySqlCommand(query, connection);
 
                 cmd.Parameters.AddWithValue("regno", regno);
                 cmd.Prepare();
 
                 cmd.ExecuteNonQuery();
+                DBconnection.closeConnection();
 
                 return true;
 

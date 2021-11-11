@@ -33,7 +33,7 @@ namespace Student_Enrolment_System.Controllers
             <summary>This is for find student is exist or not in the database.
             (<paramref name="registration_number"/>)</summary>
         */
-        bool find_student_by_regno(int regno);
+        Student find_student_by_regno(int regno);
 
         /**
             <summary>This is for delte student.

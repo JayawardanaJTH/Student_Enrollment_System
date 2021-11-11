@@ -137,6 +137,7 @@
     <Compile Include="Resources\Button_WOC.cs">
       <SubType>Component</SubType>
     </Compile>
+    <Compile Include="Utility\Constants.cs" />
     <Compile Include="Utility\DBconnection.cs" />
     <EmbeddedResource Include="Forms\Home.resx">
       <DependentUpon>Home.cs</DependentUpon>

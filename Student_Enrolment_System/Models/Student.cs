@@ -14,6 +14,12 @@ namespace Student_Enrolment_System.Models
         private char _gender;
         private int _contact;
         private string _course;
+        private bool _status;
+
+        public Student()
+        {
+            _status = false;
+        }
 
         public Student(int regno, string name, DateTime dob, char gender, int contact, string course)
         {
@@ -59,6 +65,12 @@ namespace Student_Enrolment_System.Models
         {
             get { return _course; }
             set { _course = value; }
+        }
+
+        public bool status
+        {
+            get { return _status; }
+            set { _status = value; }
         }
     }
 }
