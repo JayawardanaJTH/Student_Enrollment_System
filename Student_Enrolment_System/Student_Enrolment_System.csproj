@@ -143,6 +143,7 @@
     <Compile Include="Forms\ST_Enroll_UI.Designer.cs">
       <DependentUpon>ST_Enroll_UI.cs</DependentUpon>
     </Compile>
+    <Compile Include="Models\CourseFee.cs" />
     <Compile Include="Models\Student.cs" />
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />

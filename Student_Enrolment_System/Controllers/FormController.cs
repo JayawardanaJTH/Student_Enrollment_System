@@ -38,11 +38,11 @@ namespace Student_Enrolment_System.Controllers
             ST_Enroll_UI Form = (ST_Enroll_UI)Object;
             bool Status = false;
 
-            if (Form.txt_regNumber.Text.Equals(""))
+            if (Form.txt_regNumber.Text.Equals(string.Empty))
             {
                 Status = true;
             }
-            else if (Form.txt_studentName.Text.Equals(""))
+            else if (Form.txt_studentName.Text.Equals(string.Empty))
             {
                 Status = true;
             }
@@ -54,7 +54,7 @@ namespace Student_Enrolment_System.Controllers
             {
                 Status = true;
             }
-            else if (Form.txt_contact.Text.Equals("") || Form.txt_contact.Text.Length != 10)
+            else if (Form.txt_contact.Text.Equals(string.Empty) || Form.txt_contact.Text.Length != 10)
             {
                 Status = true;
             }
@@ -159,6 +159,71 @@ namespace Student_Enrolment_System.Controllers
                 MySqlCommand Command = new MySqlCommand(Query, Connection);
 
                 Command.Parameters.AddWithValue("regno", regno);
+                Command.Prepare();
+
+                Command.ExecuteNonQuery();
+                DbConnection.closeConnection();
+
+                return true;
+
+            }
+            catch (Exception e)
+            {
+                return false;
+            }
+        }
+
+        public List<int> GetRegistraionNumbers()
+        {
+            try
+            {
+                List<int> RegistrationNumbers = new List<int>();
+
+                MySqlConnection Connection = DbConnection.getConnection();
+
+                string Query = Constants.GetAllStudentsRegistrationNumbers;
+                MySqlCommand Command = new MySqlCommand(Query, Connection);
+
+                MySqlDataReader Reader = Command.ExecuteReader();
+
+                if (Reader.HasRows)
+                {
+                    while (Reader.Read())
+                    {
+                        RegistrationNumbers.Add(Reader.GetInt32(0));
+                    }
+
+                    Reader.Close();
+                    DbConnection.closeConnection();
+
+                    return RegistrationNumbers;
+                }
+                else
+                {
+                    Reader.Close();
+                    DbConnection.closeConnection();
+
+                    return null;
+                }
+            }
+            catch (Exception e)
+            {
+                return null;
+            }
+        }
+
+        public bool InsertCourseFee(CourseFee Fee)
+        {
+            try
+            {
+                MySqlConnection Connection = DbConnection.getConnection();
+                string Query = Constants.InsertCourseFee;
+                MySqlCommand Command = new MySqlCommand(Query, Connection);
+
+                Command.Parameters.AddWithValue("regno", Fee.RegistrationNumber);
+                Command.Parameters.AddWithValue("amount", Fee.Amount);
+                Command.Parameters.AddWithValue("discount", Fee.Discount);
+                Command.Parameters.AddWithValue("total", Fee.Total);
                 Command.Prepare();
 
                 Command.ExecuteNonQuery();

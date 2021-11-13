@@ -31,15 +31,15 @@
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(CourseFeePage));
             this.bunifuCustomLabel1 = new Bunifu.Framework.UI.BunifuCustomLabel();
             this.groupBox = new System.Windows.Forms.GroupBox();
-            this.label1 = new System.Windows.Forms.Label();
-            this.label2 = new System.Windows.Forms.Label();
-            this.label3 = new System.Windows.Forms.Label();
-            this.label4 = new System.Windows.Forms.Label();
-            this.comboBox1 = new System.Windows.Forms.ComboBox();
-            this.textBox1 = new System.Windows.Forms.TextBox();
-            this.textBox2 = new System.Windows.Forms.TextBox();
-            this.label5 = new System.Windows.Forms.Label();
-            this.textBox3 = new System.Windows.Forms.TextBox();
+            this.txt_total = new System.Windows.Forms.TextBox();
+            this.lbl_presentMark = new System.Windows.Forms.Label();
+            this.txt_discount = new System.Windows.Forms.TextBox();
+            this.txt_amount = new System.Windows.Forms.TextBox();
+            this.cmb_regno = new System.Windows.Forms.ComboBox();
+            this.lbl_total = new System.Windows.Forms.Label();
+            this.lbl_discount = new System.Windows.Forms.Label();
+            this.lbl_amount = new System.Windows.Forms.Label();
+            this.lbl_regno = new System.Windows.Forms.Label();
             this.btn_saveFee = new Bunifu.Framework.UI.BunifuThinButton2();
             this.btn_exit = new Bunifu.Framework.UI.BunifuThinButton2();
             this.btn_home = new Bunifu.Framework.UI.BunifuThinButton2();
@@ -61,15 +61,15 @@
             // 
             this.groupBox.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.groupBox.BackColor = System.Drawing.SystemColors.ActiveBorder;
-            this.groupBox.Controls.Add(this.textBox3);
-            this.groupBox.Controls.Add(this.label5);
-            this.groupBox.Controls.Add(this.textBox2);
-            this.groupBox.Controls.Add(this.textBox1);
-            this.groupBox.Controls.Add(this.comboBox1);
-            this.groupBox.Controls.Add(this.label4);
-            this.groupBox.Controls.Add(this.label3);
-            this.groupBox.Controls.Add(this.label2);
-            this.groupBox.Controls.Add(this.label1);
+            this.groupBox.Controls.Add(this.txt_total);
+            this.groupBox.Controls.Add(this.lbl_presentMark);
+            this.groupBox.Controls.Add(this.txt_discount);
+            this.groupBox.Controls.Add(this.txt_amount);
+            this.groupBox.Controls.Add(this.cmb_regno);
+            this.groupBox.Controls.Add(this.lbl_total);
+            this.groupBox.Controls.Add(this.lbl_discount);
+            this.groupBox.Controls.Add(this.lbl_amount);
+            this.groupBox.Controls.Add(this.lbl_regno);
             this.groupBox.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.groupBox.Location = new System.Drawing.Point(51, 72);
             this.groupBox.Name = "groupBox";
@@ -78,85 +78,89 @@
             this.groupBox.TabStop = false;
             this.groupBox.Text = "Payment Details";
             // 
-            // label1
+            // txt_total
             // 
-            this.label1.AutoSize = true;
-            this.label1.Font = new System.Drawing.Font("Microsoft Sans Serif", 15F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label1.Location = new System.Drawing.Point(33, 58);
-            this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(183, 25);
-            this.label1.TabIndex = 0;
-            this.label1.Text = "Registraion Number";
+            this.txt_total.Enabled = false;
+            this.txt_total.Location = new System.Drawing.Point(291, 168);
+            this.txt_total.Name = "txt_total";
+            this.txt_total.Size = new System.Drawing.Size(180, 26);
+            this.txt_total.TabIndex = 8;
             // 
-            // label2
+            // lbl_presentMark
             // 
-            this.label2.AutoSize = true;
-            this.label2.Font = new System.Drawing.Font("Microsoft Sans Serif", 15F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label2.Location = new System.Drawing.Point(33, 95);
-            this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(80, 25);
-            this.label2.TabIndex = 1;
-            this.label2.Text = "Amount";
+            this.lbl_presentMark.AutoSize = true;
+            this.lbl_presentMark.Font = new System.Drawing.Font("Microsoft Sans Serif", 15F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lbl_presentMark.Location = new System.Drawing.Point(349, 132);
+            this.lbl_presentMark.Name = "lbl_presentMark";
+            this.lbl_presentMark.Size = new System.Drawing.Size(31, 25);
+            this.lbl_presentMark.TabIndex = 7;
+            this.lbl_presentMark.Text = "%";
             // 
-            // label3
+            // txt_discount
             // 
-            this.label3.AutoSize = true;
-            this.label3.Font = new System.Drawing.Font("Microsoft Sans Serif", 15F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label3.Location = new System.Drawing.Point(33, 132);
-            this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(88, 25);
-            this.label3.TabIndex = 2;
-            this.label3.Text = "Discount";
+            this.txt_discount.Location = new System.Drawing.Point(291, 131);
+            this.txt_discount.Name = "txt_discount";
+            this.txt_discount.Size = new System.Drawing.Size(52, 26);
+            this.txt_discount.TabIndex = 6;
+            this.txt_discount.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txt_discount_KeyPress);
+            this.txt_discount.Leave += new System.EventHandler(this.txt_discount_Leave);
             // 
-            // label4
+            // txt_amount
             // 
-            this.label4.AutoSize = true;
-            this.label4.Font = new System.Drawing.Font("Microsoft Sans Serif", 15F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label4.Location = new System.Drawing.Point(33, 169);
-            this.label4.Name = "label4";
-            this.label4.Size = new System.Drawing.Size(197, 25);
-            this.label4.TabIndex = 3;
-            this.label4.Text = "Total Amount To Pay";
+            this.txt_amount.Location = new System.Drawing.Point(291, 94);
+            this.txt_amount.Name = "txt_amount";
+            this.txt_amount.Size = new System.Drawing.Size(181, 26);
+            this.txt_amount.TabIndex = 5;
+            this.txt_amount.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txt_amount_KeyPress);
+            this.txt_amount.Leave += new System.EventHandler(this.txt_amount_Leave);
             // 
-            // comboBox1
+            // cmb_regno
             // 
-            this.comboBox1.FormattingEnabled = true;
-            this.comboBox1.Location = new System.Drawing.Point(291, 55);
-            this.comboBox1.Name = "comboBox1";
-            this.comboBox1.Size = new System.Drawing.Size(181, 28);
-            this.comboBox1.TabIndex = 4;
+            this.cmb_regno.FormattingEnabled = true;
+            this.cmb_regno.Location = new System.Drawing.Point(291, 55);
+            this.cmb_regno.Name = "cmb_regno";
+            this.cmb_regno.Size = new System.Drawing.Size(181, 28);
+            this.cmb_regno.TabIndex = 4;
             // 
-            // textBox1
+            // lbl_total
             // 
-            this.textBox1.Location = new System.Drawing.Point(291, 94);
-            this.textBox1.Name = "textBox1";
-            this.textBox1.Size = new System.Drawing.Size(181, 26);
-            this.textBox1.TabIndex = 5;
+            this.lbl_total.AutoSize = true;
+            this.lbl_total.Font = new System.Drawing.Font("Microsoft Sans Serif", 15F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lbl_total.Location = new System.Drawing.Point(33, 169);
+            this.lbl_total.Name = "lbl_total";
+            this.lbl_total.Size = new System.Drawing.Size(197, 25);
+            this.lbl_total.TabIndex = 3;
+            this.lbl_total.Text = "Total Amount To Pay";
             // 
-            // textBox2
+            // lbl_discount
             // 
-            this.textBox2.Location = new System.Drawing.Point(291, 131);
-            this.textBox2.Name = "textBox2";
-            this.textBox2.Size = new System.Drawing.Size(52, 26);
-            this.textBox2.TabIndex = 6;
+            this.lbl_discount.AutoSize = true;
+            this.lbl_discount.Font = new System.Drawing.Font("Microsoft Sans Serif", 15F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lbl_discount.Location = new System.Drawing.Point(33, 132);
+            this.lbl_discount.Name = "lbl_discount";
+            this.lbl_discount.Size = new System.Drawing.Size(88, 25);
+            this.lbl_discount.TabIndex = 2;
+            this.lbl_discount.Text = "Discount";
             // 
-            // label5
+            // lbl_amount
             // 
-            this.label5.AutoSize = true;
-            this.label5.Font = new System.Drawing.Font("Microsoft Sans Serif", 15F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label5.Location = new System.Drawing.Point(349, 132);
-            this.label5.Name = "label5";
-            this.label5.Size = new System.Drawing.Size(31, 25);
-            this.label5.TabIndex = 7;
-            this.label5.Text = "%";
+            this.lbl_amount.AutoSize = true;
+            this.lbl_amount.Font = new System.Drawing.Font("Microsoft Sans Serif", 15F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lbl_amount.Location = new System.Drawing.Point(33, 95);
+            this.lbl_amount.Name = "lbl_amount";
+            this.lbl_amount.Size = new System.Drawing.Size(80, 25);
+            this.lbl_amount.TabIndex = 1;
+            this.lbl_amount.Text = "Amount";
             // 
-            // textBox3
+            // lbl_regno
             // 
-            this.textBox3.Enabled = false;
-            this.textBox3.Location = new System.Drawing.Point(291, 168);
-            this.textBox3.Name = "textBox3";
-            this.textBox3.Size = new System.Drawing.Size(180, 26);
-            this.textBox3.TabIndex = 8;
+            this.lbl_regno.AutoSize = true;
+            this.lbl_regno.Font = new System.Drawing.Font("Microsoft Sans Serif", 15F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lbl_regno.Location = new System.Drawing.Point(33, 58);
+            this.lbl_regno.Name = "lbl_regno";
+            this.lbl_regno.Size = new System.Drawing.Size(183, 25);
+            this.lbl_regno.TabIndex = 0;
+            this.lbl_regno.Text = "Registraion Number";
             // 
             // btn_saveFee
             // 
@@ -166,7 +170,7 @@
             this.btn_saveFee.ActiveForecolor = System.Drawing.Color.Black;
             this.btn_saveFee.ActiveLineColor = System.Drawing.Color.Black;
             this.btn_saveFee.Anchor = System.Windows.Forms.AnchorStyles.None;
-            this.btn_saveFee.BackColor = System.Drawing.Color.Transparent;
+            this.btn_saveFee.BackColor = System.Drawing.SystemColors.Control;
             this.btn_saveFee.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("btn_saveFee.BackgroundImage")));
             this.btn_saveFee.ButtonText = "SAVE";
             this.btn_saveFee.Cursor = System.Windows.Forms.Cursors.Hand;
@@ -183,6 +187,7 @@
             this.btn_saveFee.Size = new System.Drawing.Size(163, 52);
             this.btn_saveFee.TabIndex = 2;
             this.btn_saveFee.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            this.btn_saveFee.Click += new System.EventHandler(this.btn_saveFee_Click);
             // 
             // btn_exit
             // 
@@ -265,15 +270,15 @@
 
         private Bunifu.Framework.UI.BunifuCustomLabel bunifuCustomLabel1;
         private System.Windows.Forms.GroupBox groupBox;
-        private System.Windows.Forms.Label label1;
-        private System.Windows.Forms.Label label5;
-        private System.Windows.Forms.TextBox textBox2;
-        private System.Windows.Forms.TextBox textBox1;
-        private System.Windows.Forms.ComboBox comboBox1;
-        private System.Windows.Forms.Label label4;
-        private System.Windows.Forms.Label label3;
-        private System.Windows.Forms.Label label2;
-        private System.Windows.Forms.TextBox textBox3;
+        private System.Windows.Forms.Label lbl_regno;
+        private System.Windows.Forms.Label lbl_presentMark;
+        private System.Windows.Forms.TextBox txt_discount;
+        private System.Windows.Forms.TextBox txt_amount;
+        private System.Windows.Forms.ComboBox cmb_regno;
+        private System.Windows.Forms.Label lbl_total;
+        private System.Windows.Forms.Label lbl_discount;
+        private System.Windows.Forms.Label lbl_amount;
+        private System.Windows.Forms.TextBox txt_total;
         private Bunifu.Framework.UI.BunifuThinButton2 btn_saveFee;
         private Bunifu.Framework.UI.BunifuThinButton2 btn_exit;
         private Bunifu.Framework.UI.BunifuThinButton2 btn_home;
