@@ -10,9 +10,9 @@ using System.Windows.Forms;
 
 namespace Student_Enrolment_System.Forms
 {
-    public partial class Home : Form
+    public partial class SplashScreen : Form
     {
-        public Home()
+        public SplashScreen()
         {
             InitializeComponent();
         }
@@ -33,7 +33,7 @@ namespace Student_Enrolment_System.Forms
             //after 3 sec stop the timer
             tmr.Stop();
             //display mainform
-            ST_Enroll_UI mainUI = new ST_Enroll_UI();
+            HomePage mainUI = new HomePage();
 
             Hide();
             mainUI.Show();

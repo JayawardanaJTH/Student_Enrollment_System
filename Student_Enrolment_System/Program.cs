@@ -1,15 +1,12 @@
 ﻿using Student_Enrolment_System.Forms;
 using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Threading;
-using System.Threading.Tasks;
 using System.Windows.Forms;
 
 namespace Student_Enrolment_System
 {
     static class Program
     {
+        
         /// <summary>
         /// The main entry point for the application.
         /// </summary>
@@ -18,8 +15,8 @@ namespace Student_Enrolment_System
         {
             Application.EnableVisualStyles();
             Application.SetCompatibleTextRenderingDefault(false);
-            //Application.Run(new Home());
-            Application.Run(new ST_Enroll_UI());
+            //Application.Run(new SplashScreen());
+            Application.Run(new HomePage());
         }
     }
 }

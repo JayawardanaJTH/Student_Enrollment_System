@@ -1,5 +1,6 @@
 ﻿using MySql.Data.MySqlClient;
 using Student_Enrolment_System.Controllers;
+using Student_Enrolment_System.Forms;
 using Student_Enrolment_System.Models;
 using Student_Enrolment_System.Utility;
 using System;
@@ -201,7 +202,16 @@ namespace Student_Enrolment_System
 
         private void btn_exit_Click(object sender, EventArgs e)
         {
+            Dispose();
             Close();
+        }
+
+        private void btn_home_Click(object sender, EventArgs e)
+        {
+            Hide();
+
+            HomePage Home = new HomePage();
+            Home.Show();
         }
     }
 }
