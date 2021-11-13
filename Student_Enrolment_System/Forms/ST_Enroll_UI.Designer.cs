@@ -45,11 +45,11 @@
             this.cmb_courses = new System.Windows.Forms.ComboBox();
             this.txt_age = new System.Windows.Forms.Label();
             this.groupBox = new System.Windows.Forms.GroupBox();
+            this.btn_home = new ePOSOne.btnProduct.Button_WOC();
             this.btn_exit = new ePOSOne.btnProduct.Button_WOC();
             this.btn_clear = new ePOSOne.btnProduct.Button_WOC();
             this.btn_delete = new ePOSOne.btnProduct.Button_WOC();
             this.btn_insert = new ePOSOne.btnProduct.Button_WOC();
-            this.btn_home = new ePOSOne.btnProduct.Button_WOC();
             this.groupBox.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -143,7 +143,7 @@
             this.lbl_age.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
             this.lbl_age.AutoSize = true;
             this.lbl_age.Font = new System.Drawing.Font("Microsoft Sans Serif", 15F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lbl_age.Location = new System.Drawing.Point(465, 100);
+            this.lbl_age.Location = new System.Drawing.Point(465, 105);
             this.lbl_age.Name = "lbl_age";
             this.lbl_age.Size = new System.Drawing.Size(48, 25);
             this.lbl_age.TabIndex = 8;
@@ -153,9 +153,10 @@
             // 
             this.txt_regNumber.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
+            this.txt_regNumber.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.txt_regNumber.Location = new System.Drawing.Point(249, 31);
             this.txt_regNumber.Name = "txt_regNumber";
-            this.txt_regNumber.Size = new System.Drawing.Size(210, 26);
+            this.txt_regNumber.Size = new System.Drawing.Size(210, 22);
             this.txt_regNumber.TabIndex = 9;
             this.txt_regNumber.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txt_regNumber_KeyPress);
             this.txt_regNumber.Leave += new System.EventHandler(this.txt_regNumber_Leave);
@@ -164,6 +165,7 @@
             // 
             this.txt_studentName.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
+            this.txt_studentName.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.txt_studentName.Location = new System.Drawing.Point(249, 68);
             this.txt_studentName.Multiline = true;
             this.txt_studentName.Name = "txt_studentName";
@@ -175,9 +177,10 @@
             this.pik_date.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
             this.pik_date.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.pik_date.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.pik_date.Location = new System.Drawing.Point(249, 105);
             this.pik_date.Name = "pik_date";
-            this.pik_date.Size = new System.Drawing.Size(210, 26);
+            this.pik_date.Size = new System.Drawing.Size(210, 21);
             this.pik_date.TabIndex = 11;
             this.pik_date.CloseUp += new System.EventHandler(this.pik_date_CloseUp);
             // 
@@ -214,10 +217,11 @@
             this.txt_contact.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
             this.txt_contact.DataBindings.Add(new System.Windows.Forms.Binding("MaxLength", global::Student_Enrolment_System.Properties.Settings.Default, "contact", true, System.Windows.Forms.DataSourceUpdateMode.OnPropertyChanged));
+            this.txt_contact.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.txt_contact.Location = new System.Drawing.Point(249, 190);
             this.txt_contact.MaxLength = global::Student_Enrolment_System.Properties.Settings.Default.contact;
             this.txt_contact.Name = "txt_contact";
-            this.txt_contact.Size = new System.Drawing.Size(210, 26);
+            this.txt_contact.Size = new System.Drawing.Size(210, 22);
             this.txt_contact.TabIndex = 14;
             this.txt_contact.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txt_contact_KeyPress);
             // 
@@ -227,6 +231,7 @@
             | System.Windows.Forms.AnchorStyles.Right)));
             this.cmb_courses.Cursor = System.Windows.Forms.Cursors.Hand;
             this.cmb_courses.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+            this.cmb_courses.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.cmb_courses.FormattingEnabled = true;
             this.cmb_courses.Items.AddRange(new object[] {
             "Select Course",
@@ -237,14 +242,14 @@
             "Dip - BM"});
             this.cmb_courses.Location = new System.Drawing.Point(249, 225);
             this.cmb_courses.Name = "cmb_courses";
-            this.cmb_courses.Size = new System.Drawing.Size(210, 28);
+            this.cmb_courses.Size = new System.Drawing.Size(210, 24);
             this.cmb_courses.TabIndex = 15;
             // 
             // txt_age
             // 
             this.txt_age.AutoSize = true;
             this.txt_age.Font = new System.Drawing.Font("Microsoft Sans Serif", 15F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txt_age.Location = new System.Drawing.Point(519, 100);
+            this.txt_age.Location = new System.Drawing.Point(510, 105);
             this.txt_age.Name = "txt_age";
             this.txt_age.Size = new System.Drawing.Size(23, 25);
             this.txt_age.TabIndex = 16;
@@ -276,6 +281,28 @@
             this.groupBox.TabIndex = 29;
             this.groupBox.TabStop = false;
             this.groupBox.Text = "Student Details";
+            // 
+            // btn_home
+            // 
+            this.btn_home.Anchor = System.Windows.Forms.AnchorStyles.None;
+            this.btn_home.BackColor = System.Drawing.Color.Transparent;
+            this.btn_home.BorderColor = System.Drawing.Color.Black;
+            this.btn_home.ButtonColor = System.Drawing.Color.Red;
+            this.btn_home.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.btn_home.FlatAppearance.BorderSize = 0;
+            this.btn_home.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btn_home.Font = new System.Drawing.Font("Century Gothic", 15F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btn_home.Location = new System.Drawing.Point(464, 393);
+            this.btn_home.Name = "btn_home";
+            this.btn_home.OnHoverBorderColor = System.Drawing.Color.Black;
+            this.btn_home.OnHoverButtonColor = System.Drawing.Color.OrangeRed;
+            this.btn_home.OnHoverTextColor = System.Drawing.Color.Black;
+            this.btn_home.Size = new System.Drawing.Size(160, 42);
+            this.btn_home.TabIndex = 30;
+            this.btn_home.Text = "HOME";
+            this.btn_home.TextColor = System.Drawing.Color.Black;
+            this.btn_home.UseVisualStyleBackColor = false;
+            this.btn_home.Click += new System.EventHandler(this.btn_home_Click);
             // 
             // btn_exit
             // 
@@ -364,28 +391,6 @@
             this.btn_insert.TextColor = System.Drawing.Color.Black;
             this.btn_insert.UseVisualStyleBackColor = false;
             this.btn_insert.Click += new System.EventHandler(this.btn_insert_Click);
-            // 
-            // btn_home
-            // 
-            this.btn_home.Anchor = System.Windows.Forms.AnchorStyles.None;
-            this.btn_home.BackColor = System.Drawing.Color.Transparent;
-            this.btn_home.BorderColor = System.Drawing.Color.Black;
-            this.btn_home.ButtonColor = System.Drawing.Color.Red;
-            this.btn_home.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.btn_home.FlatAppearance.BorderSize = 0;
-            this.btn_home.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btn_home.Font = new System.Drawing.Font("Century Gothic", 15F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btn_home.Location = new System.Drawing.Point(464, 393);
-            this.btn_home.Name = "btn_home";
-            this.btn_home.OnHoverBorderColor = System.Drawing.Color.Black;
-            this.btn_home.OnHoverButtonColor = System.Drawing.Color.OrangeRed;
-            this.btn_home.OnHoverTextColor = System.Drawing.Color.Black;
-            this.btn_home.Size = new System.Drawing.Size(160, 42);
-            this.btn_home.TabIndex = 30;
-            this.btn_home.Text = "HOME";
-            this.btn_home.TextColor = System.Drawing.Color.Black;
-            this.btn_home.UseVisualStyleBackColor = false;
-            this.btn_home.Click += new System.EventHandler(this.btn_home_Click);
             // 
             // ST_Enroll_UI
             // 

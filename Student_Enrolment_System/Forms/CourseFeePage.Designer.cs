@@ -81,6 +81,7 @@
             // txt_total
             // 
             this.txt_total.Enabled = false;
+            this.txt_total.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.txt_total.Location = new System.Drawing.Point(291, 168);
             this.txt_total.Name = "txt_total";
             this.txt_total.Size = new System.Drawing.Size(180, 26);
@@ -89,15 +90,16 @@
             // lbl_presentMark
             // 
             this.lbl_presentMark.AutoSize = true;
-            this.lbl_presentMark.Font = new System.Drawing.Font("Microsoft Sans Serif", 15F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lbl_presentMark.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lbl_presentMark.Location = new System.Drawing.Point(349, 132);
             this.lbl_presentMark.Name = "lbl_presentMark";
-            this.lbl_presentMark.Size = new System.Drawing.Size(31, 25);
+            this.lbl_presentMark.Size = new System.Drawing.Size(23, 20);
             this.lbl_presentMark.TabIndex = 7;
             this.lbl_presentMark.Text = "%";
             // 
             // txt_discount
             // 
+            this.txt_discount.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.txt_discount.Location = new System.Drawing.Point(291, 131);
             this.txt_discount.Name = "txt_discount";
             this.txt_discount.Size = new System.Drawing.Size(52, 26);
@@ -107,6 +109,7 @@
             // 
             // txt_amount
             // 
+            this.txt_amount.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.txt_amount.Location = new System.Drawing.Point(291, 94);
             this.txt_amount.Name = "txt_amount";
             this.txt_amount.Size = new System.Drawing.Size(181, 26);
@@ -116,6 +119,7 @@
             // 
             // cmb_regno
             // 
+            this.cmb_regno.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.cmb_regno.FormattingEnabled = true;
             this.cmb_regno.Location = new System.Drawing.Point(291, 55);
             this.cmb_regno.Name = "cmb_regno";
